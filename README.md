@@ -2,11 +2,26 @@
 
 **[English](#english)** | **[Українська](#українська)**
 
-Released firmware for the ESP32 controller that reads JK-PB BMSes over RS485 and drives an Eltek Flatpack2 over CAN. This repository holds the firmware files only. The newest version is **0.5.0**.
+Released firmware for the ESP32 controller that reads JK-PB BMSes over RS485 and drives an Eltek Flatpack2 over CAN. This repository holds the firmware files only. The newest version is **0.6.0**.
 
-Готові прошивки контролера на ESP32, який читає BMS JK-PB через RS485 і керує Eltek Flatpack2 через CAN. Тут лише файли прошивок. Найновіша версія: **0.5.0**.
+Готові прошивки контролера на ESP32, який читає BMS JK-PB через RS485 і керує Eltek Flatpack2 через CAN. Тут лише файли прошивок. Найновіша версія: **0.6.0**.
 
 ## Versions / Версії
+
+### 0.6.0
+
+- Waveshare: firmware update from the screen, beside the version
+- The board finds the new version itself and shows what is new
+- Release files are now in a public repository
+
+- Waveshare: оновлення прошивки з екрана, кнопка біля версії
+- Плата сама знаходить нову версію й показує, що в ній нового
+- Файли релізів тепер у публічному репозиторії
+
+| | Update / Оновлення | First flash over USB / Перше прошивання через USB |
+|---|---|---|
+| ESP32 DevKit | [jk-fp-v0.6.0.bin](v0.6.0/jk-fp-v0.6.0.bin) | [jk-fp-v0.6.0-full.bin](v0.6.0/jk-fp-v0.6.0-full.bin) |
+| Waveshare ESP32-S3-Touch-LCD-5B | [jk-fp-v0.6.0-waveshare-s3.bin](v0.6.0/jk-fp-v0.6.0-waveshare-s3.bin) | [jk-fp-v0.6.0-waveshare-s3-full.bin](v0.6.0/jk-fp-v0.6.0-waveshare-s3-full.bin) |
 
 ### 0.5.0
 

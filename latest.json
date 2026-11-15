@@ -1,15 +1,18 @@
 {
- "version": "0.5.0",
+ "version": "0.6.0",
  "uk": [
-  "Три мови: українська, англійська й російська",
-  "Мова одна на весь пристрій: екран, веб, Home Assistant"
+  "Waveshare: оновлення прошивки з екрана, кнопка біля версії",
+  "Плата сама знаходить нову версію й показує, що в ній нового",
+  "Файли релізів тепер у публічному репозиторії"
  ],
  "en": [
-  "Three languages: Ukrainian, English and Russian",
-  "One language for the whole device: screen, web, Home Assistant"
+  "Waveshare: firmware update from the screen, beside the version",
+  "The board finds the new version itself and shows what is new",
+  "Release files are now in a public repository"
  ],
  "ru": [
-  "Три языка: украинский, английский и русский",
-  "Язык один на всё устройство: экран, веб, Home Assistant"
+  "Waveshare: обновление прошивки с экрана, кнопка возле версии",
+  "Плата сама находит новую версию и показывает, что в ней нового",
+  "Файлы релизов теперь в публичном репозитории"
  ]
 }
