@@ -46,7 +46,7 @@ Each version has two files per board. The two boards' files are not interchangea
 2. **First start:** the ESP32 opens the Wi-Fi access point `FlatJack-XXXXXX` for 180 s. Connect to it and choose your network.
 3. **Open the UI:** go to http://flatjack.local/ or the IP your router gave it.
 4. **Updates:**
-   - Waveshare board with firmware newer than 0.5.0, from its screen: Settings → the download button beside the version. It finds the newest version here, shows what is new and installs it.
+   - Waveshare board with firmware newer than 0.6.0, from its screen: Settings → the download button beside the version. It finds the newest version here, shows what is new and installs it.
    - Any board, from the web UI: System tab → Firmware update → choose your board's update file → Update.
 
 Settings, Wi-Fi and history are kept. Every update restarts the ESP32, and the charger then starts again from Bulk.
@@ -63,7 +63,7 @@ Settings, Wi-Fi and history are kept. Every update restarts the ESP32, and the c
 2. **Перший запуск:** ESP32 на 180 с відкриває точку доступу Wi-Fi `FlatJack-XXXXXX`. Під'єднайтеся до неї й виберіть свою мережу.
 3. **Інтерфейс:** відкрийте http://flatjack.local/ або IP, який видав роутер.
 4. **Оновлення:**
-   - плата Waveshare з прошивкою, новішою за 0.5.0, з її екрана: «Налаштування» → кнопка завантаження біля версії. Вона знаходить тут найновішу версію, показує, що нового, і встановлює її.
+   - плата Waveshare з прошивкою, новішою за 0.6.0, з її екрана: «Налаштування» → кнопка завантаження біля версії. Вона знаходить тут найновішу версію, показує, що нового, і встановлює її.
    - будь-яка плата, з веб-інтерфейсу: вкладка «Система» → «Оновлення прошивки» → виберіть файл оновлення для своєї плати → «Оновити».
 
 Налаштування, Wi-Fi та історія зберігаються. Кожне оновлення перезапускає ESP32, і заряджання знову починається з Bulk.
