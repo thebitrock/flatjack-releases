@@ -1,0 +1,15 @@
+{
+ "version": "0.5.0",
+ "uk": [
+  "Три мови: українська, англійська й російська",
+  "Мова одна на весь пристрій: екран, веб, Home Assistant"
+ ],
+ "en": [
+  "Three languages: Ukrainian, English and Russian",
+  "One language for the whole device: screen, web, Home Assistant"
+ ],
+ "ru": [
+  "Три языка: украинский, английский и русский",
+  "Язык один на всё устройство: экран, веб, Home Assistant"
+ ]
+}
