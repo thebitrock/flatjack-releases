@@ -1,15 +1,18 @@
 {
- "version": "0.7.2",
+ "version": "0.7.3",
  "uk": [
-  "Прогноз роботи від батареї враховує незвичне навантаження",
-  "Шкала SOC в історії від найменшого до найбільшого значення"
+  "Заряджено лише тоді, коли батарея справді повна",
+  "Напруга заряду за вольтметром BMS, а не Flatpack",
+  "Шкала заряду на екрані від найменшого до найбільшого"
  ],
  "en": [
-  "The battery runtime forecast counts an unusual load",
-  "The history's SOC axis spans its lowest to highest value"
+  "Full is shown only once the battery really is full",
+  "The charge voltage is read by the BMS, not the Flatpack",
+  "The screen's charge chart spans its lowest to highest value"
  ],
  "ru": [
-  "Прогноз работы от батареи учитывает необычную нагрузку",
-  "Шкала SOC в истории от наименьшего до наибольшего значения"
+  "Заряжено только тогда, когда батарея действительно полная",
+  "Напряжение заряда по вольтметру BMS, а не Flatpack",
+  "Шкала заряда на экране от наименьшего до наибольшего"
  ]
 }
