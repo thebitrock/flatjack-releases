@@ -1,18 +1,18 @@
 {
- "version": "0.6.0",
+ "version": "0.7.0",
  "uk": [
-  "Waveshare: оновлення прошивки з екрана, кнопка біля версії",
-  "Плата сама знаходить нову версію й показує, що в ній нового",
-  "Файли релізів тепер у публічному репозиторії"
+  "Нова назва FlatJack; у Home Assistant це новий пристрій",
+  "Фази простими словами: заряджання, дозаряджання, заряджено",
+  "Прогноз, на скільки вистачить батареї; більше даних на головній"
  ],
  "en": [
-  "Waveshare: firmware update from the screen, beside the version",
-  "The board finds the new version itself and shows what is new",
-  "Release files are now in a public repository"
+  "New name FlatJack; in Home Assistant it is a new device",
+  "Charge phases in plain words: charging, topping up, full",
+  "How long the battery lasts, from the load history; more numbers"
  ],
  "ru": [
-  "Waveshare: обновление прошивки с экрана, кнопка возле версии",
-  "Плата сама находит новую версию и показывает, что в ней нового",
-  "Файлы релизов теперь в публичном репозитории"
+  "Новое имя FlatJack; в Home Assistant это новое устройство",
+  "Фазы простыми словами: зарядка, дозарядка, заряжено",
+  "Прогноз, на сколько хватит батареи; больше данных на главной"
  ]
 }

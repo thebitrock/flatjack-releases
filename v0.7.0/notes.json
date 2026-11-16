@@ -1,0 +1,18 @@
+{
+ "version": "0.7.0",
+ "uk": [
+  "Нова назва FlatJack; у Home Assistant це новий пристрій",
+  "Фази простими словами: заряджання, дозаряджання, заряджено",
+  "Прогноз, на скільки вистачить батареї; більше даних на головній"
+ ],
+ "en": [
+  "New name FlatJack; in Home Assistant it is a new device",
+  "Charge phases in plain words: charging, topping up, full",
+  "How long the battery lasts, from the load history; more numbers"
+ ],
+ "ru": [
+  "Новое имя FlatJack; в Home Assistant это новое устройство",
+  "Фазы простыми словами: зарядка, дозарядка, заряжено",
+  "Прогноз, на сколько хватит батареи; больше данных на главной"
+ ]
+}
