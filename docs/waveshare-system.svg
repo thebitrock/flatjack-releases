@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 480" width="980" height="480" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13">
+  <title>System overview, Waveshare board: power path and data links</title>
+  <defs>
+    <style>
+      .b{fill:#F7F9FA;stroke:#5C6875;stroke-width:1.5}
+      .e{fill:#EAF1F8;stroke:#2E62C9;stroke-width:1.5}
+      .h{fill:#17212B;font-weight:650;font-size:14.5px}
+      .m{fill:#5C6875;font-size:12px}
+      .pw{fill:none;stroke:#17212B;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+      .lv{fill:none;stroke:#D7263D;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+      .ac{fill:none;stroke:#A15E0B;stroke-width:5;stroke-linecap:round}
+      .dl{fill:none;stroke-width:2.5;stroke-dasharray:7 5;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="978" height="478" rx="14" fill="#FFFFFF" stroke="#D5DBE1"/>
+
+  <!-- power path -->
+  <path class="ac" d="M190 105H250"/>
+  <path class="pw" d="M450 105H950M685 105V160M875 105V160M685 220V260M500 105V160"/>
+  <text class="m" x="720" y="94">48 V DC bus · шина 48 В</text>
+
+  <rect class="b" x="30" y="70" width="160" height="70" rx="10"/>
+  <text class="h" x="46" y="100">Mains</text>
+  <text class="m" x="46" y="120">230 V AC · мережа</text>
+
+  <rect class="b" x="250" y="70" width="200" height="70" rx="10"/>
+  <text class="h" x="266" y="100">Eltek Flatpack2</text>
+  <text class="m" x="266" y="120">AC → 43.2–58 V DC, ≤ 62.5 A</text>
+
+  <rect class="b" x="440" y="160" width="140" height="60" rx="10"/>
+  <text class="h" x="452" y="186">DC-DC</text>
+  <text class="m" x="452" y="205">isolated · 48 → 12 V</text>
+
+  <rect class="b" x="600" y="160" width="170" height="60" rx="10"/>
+  <text class="h" x="616" y="186">JK-PB BMS</text>
+  <text class="m" x="616" y="205">switches the negative (P−)</text>
+
+  <rect class="b" x="600" y="260" width="170" height="60" rx="10"/>
+  <text class="h" x="616" y="286">Battery</text>
+  <text class="m" x="616" y="305">LiFePO4 16S · батарея</text>
+
+  <rect class="b" x="790" y="160" width="170" height="60" rx="10"/>
+  <text class="h" x="806" y="186">Inverter / load</text>
+  <text class="m" x="806" y="205">інвертор, навантаження</text>
+
+  <!-- controller -->
+  <path class="lv" d="M470 220V290"/>
+  <text class="m" x="462" y="262" text-anchor="end">12 V</text>
+  <rect class="e" x="250" y="290" width="250" height="80" rx="10"/>
+  <text class="h" x="266" y="318">FlatJack on Waveshare</text>
+  <text class="m" x="266" y="337">ESP32-S3-Touch-LCD-5B · 5" screen</text>
+  <text class="m" x="266" y="355">сенсорний екран · web UI</text>
+
+  <rect class="b" x="30" y="290" width="160" height="80" rx="10"/>
+  <text class="h" x="46" y="320">Phone / browser</text>
+  <text class="m" x="46" y="340">телефон, браузер</text>
+
+  <!-- data links -->
+  <path class="dl" stroke="#2E9E4F" d="M330 290V140"/>
+  <text class="m" x="340" y="200">CAN</text>
+  <text class="m" x="340" y="216">CAN_H, CAN_L</text>
+  <path class="dl" stroke="#E07B00" d="M500 320H590V190H600"/>
+  <text class="m" x="500" y="244">RS485</text>
+  <text class="m" x="500" y="260">485_A, 485_B</text>
+  <path class="dl" stroke="#7B4FD6" d="M500 352H785V190H770"/>
+  <text class="m" x="520" y="370">Bluetooth: optional · за бажанням</text>
+  <path class="dl" stroke="#2E62C9" d="M190 330H250"/>
+  <text class="m" x="199" y="320">Wi-Fi</text>
+
+  <!-- legend -->
+  <g transform="translate(30 412)" font-size="12" fill="#17212B">
+    <path class="pw" d="M0 0H26"/><text x="34" y="4">power · живлення</text>
+    <path class="dl" stroke="#5C6875" d="M170 0H200"/><text x="208" y="4">data only (A/B, CAN H/L), no ground · лише дані, без землі</text>
+  </g>
+  <text x="30" y="444" font-size="12" fill="#5C6875">The DC-DC must be isolated: JK switches the negative, so with its MOSFETs off P− and B− are ~50 V apart.</text>
+  <text x="30" y="462" font-size="12" fill="#5C6875">DC-DC має бути ізольованим: JK комутує мінус, тож при вимкнених MOSFET між P− і B− ~50 В.</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13">
+  <title>JK-PB RS485-2 RJ45 pinout, T568B colours</title>
+  <defs>
+    <pattern id="wo" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#FFFFFF"/><rect width="4" height="8" fill="#E07B00"/></pattern>
+    <pattern id="wg" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#FFFFFF"/><rect width="4" height="8" fill="#2E9E4F"/></pattern>
+    <pattern id="wb" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#FFFFFF"/><rect width="4" height="8" fill="#1F6FD1"/></pattern>
+    <pattern id="wn" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#FFFFFF"/><rect width="4" height="8" fill="#7A4A1E"/></pattern>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="14" fill="#FFFFFF" stroke="#D5DBE1"/>
+  <text x="24" y="34" font-weight="650" font-size="15" fill="#17212B">JK-PB · RS485-2 (RJ45), T568B</text>
+  <text x="24" y="54" font-size="12" fill="#5C6875">Plug seen from the contacts, latch at the back, cable down · вигляд на контакти, клямка ззаду</text>
+
+  <!-- plug body -->
+  <rect x="40" y="80" width="250" height="150" rx="10" fill="#EEF2F5" stroke="#5C6875" stroke-width="1.5"/>
+  <g stroke="#5C6875" stroke-width="1">
+    <rect x="58" y="96" width="20" height="90" fill="url(#wo)"/>
+    <rect x="86" y="96" width="20" height="90" fill="#E07B00"/>
+    <rect x="114" y="96" width="20" height="90" fill="url(#wg)"/>
+    <rect x="142" y="96" width="20" height="90" fill="#1F6FD1"/>
+    <rect x="170" y="96" width="20" height="90" fill="url(#wb)"/>
+    <rect x="198" y="96" width="20" height="90" fill="#2E9E4F"/>
+    <rect x="226" y="96" width="20" height="90" fill="url(#wn)"/>
+    <rect x="254" y="96" width="20" height="90" fill="#7A4A1E"/>
+  </g>
+  <g font-size="12" fill="#17212B" text-anchor="middle">
+    <text x="68" y="208">1</text><text x="96" y="208">2</text><text x="124" y="208">3</text><text x="152" y="208">4</text>
+    <text x="180" y="208">5</text><text x="208" y="208">6</text><text x="236" y="208">7</text><text x="264" y="208">8</text>
+  </g>
+  <rect x="135" y="230" width="60" height="70" fill="#D5DBE1" stroke="#5C6875" stroke-width="1.5"/>
+  <text x="165" y="320" font-size="12" fill="#5C6875" text-anchor="middle">cable · кабель</text>
+
+  <!-- table -->
+  <g font-size="13" fill="#17212B">
+    <text x="330" y="94" font-weight="650">Pin</text><text x="370" y="94" font-weight="650">Colour · колір</text><text x="530" y="94" font-weight="650">MAX485</text>
+    <line x1="330" y1="102" x2="616" y2="102" stroke="#D5DBE1"/>
+    <text x="330" y="124">1</text><text x="370" y="124">white-orange</text><text x="530" y="124" font-weight="650" fill="#1F6FD1">B</text>
+    <text x="330" y="148">2</text><text x="370" y="148">orange</text><text x="530" y="148" font-weight="650" fill="#E07B00">A</text>
+    <text x="330" y="172">3</text><text x="370" y="172">white-green</text><text x="530" y="172" fill="#5C6875">GND · NC</text>
+    <text x="330" y="196">4</text><text x="370" y="196">blue</text><text x="530" y="196" fill="#5C6875">—</text>
+    <text x="330" y="220">5</text><text x="370" y="220">white-blue</text><text x="530" y="220" fill="#5C6875">—</text>
+    <text x="330" y="244">6</text><text x="370" y="244">green</text><text x="530" y="244" fill="#5C6875">GND · NC</text>
+    <text x="330" y="268">7</text><text x="370" y="268">white-brown</text><text x="530" y="268" font-weight="650" fill="#E07B00">A</text>
+    <text x="330" y="292">8</text><text x="370" y="292">brown</text><text x="530" y="292" font-weight="650" fill="#1F6FD1">B</text>
+  </g>
+  <text x="330" y="318" font-size="12" fill="#5C6875">A = pins 2 + 7, B = pins 1 + 8</text>
+  <text x="330" y="334" font-size="12" fill="#5C6875">A = піни 2 + 7, B = піни 1 + 8</text>
+  <text x="330" y="350" font-size="12" fill="#5C6875">NC = not connected · не під'єднувати</text>
+</svg>

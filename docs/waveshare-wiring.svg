@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 600" width="980" height="600" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13">
+  <title>Wiring: Waveshare ESP32-S3-Touch-LCD-5B – JK-PB, Flatpack2, isolated DC-DC</title>
+  <defs>
+    <style>
+      .box{fill:#F7F9FA;stroke:#5C6875;stroke-width:1.5}
+      .mod{fill:#EAF1F8;stroke:#5C6875;stroke-width:1.5}
+      .ext{fill:#FFF7EC;stroke:#A15E0B;stroke-width:1.5}
+      .t{fill:#17212B}
+      .h{fill:#17212B;font-weight:650;font-size:14.5px}
+      .m{fill:#5C6875;font-size:12px}
+      .w{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+      .dot{stroke:none}
+    </style>
+  </defs>
+  <rect x="1" y="1" width="978" height="598" rx="14" fill="#FFFFFF" stroke="#D5DBE1"/>
+
+  <!-- Waveshare board -->
+  <rect class="box" x="40" y="70" width="250" height="430" rx="10"/>
+  <text class="h" x="56" y="98">Waveshare</text>
+  <text class="h" x="56" y="117">ESP32-S3-Touch-LCD-5B</text>
+  <text class="m" x="56" y="135">screw terminals on the board</text>
+  <g class="t" text-anchor="end">
+    <text x="278" y="194">485_A</text>
+    <text x="278" y="254">485_B</text>
+    <text x="278" y="304">VIN</text>
+    <text x="278" y="339">GND</text>
+    <text x="278" y="399">CAN_H</text>
+    <text x="278" y="449">CAN_L</text>
+  </g>
+  <text class="m" x="56" y="420">CAN 120 Ω switch: ON</text>
+  <text class="m" x="56" y="436">термінатор CAN: увімкнено</text>
+  <rect x="140" y="500" width="50" height="22" rx="4" fill="#D5DBE1" stroke="#5C6875"/>
+  <text class="m" x="165" y="542" text-anchor="middle">USB-C: first flash only</text>
+  <text class="m" x="165" y="558" text-anchor="middle">лише для першого прошивання</text>
+
+  <!-- DC-DC -->
+  <rect class="mod" x="420" y="280" width="190" height="80" rx="10"/>
+  <text class="h" x="515" y="306" text-anchor="middle">Isolated DC-DC</text>
+  <text class="m" x="515" y="324" text-anchor="middle">e.g. URB4812, 6 W or more</text>
+  <text class="m" x="515" y="340" text-anchor="middle">ізольований, від 6 Вт</text>
+
+  <!-- JK-PB -->
+  <rect class="ext" x="740" y="100" width="210" height="190" rx="10"/>
+  <text class="h" x="756" y="128">JK-PB BMS</text>
+  <text class="m" x="756" y="146">port RS485-2 "Parallel", RJ45</text>
+  <g class="t">
+    <text x="756" y="194">A · pins 2 + 7</text>
+    <text x="756" y="254">B · pins 1 + 8</text>
+  </g>
+  <text class="m" x="756" y="276">GND · pins 3 + 6: not connected</text>
+
+  <!-- Flatpack2 -->
+  <rect class="ext" x="740" y="370" width="210" height="110" rx="10"/>
+  <text class="h" x="756" y="388">Eltek Flatpack2</text>
+  <g class="t">
+    <text x="772" y="404">CAN H</text>
+    <text x="772" y="454">CAN L</text>
+  </g>
+  <text class="m" x="756" y="474">±48 V: power only</text>
+
+  <!-- RS485 -->
+  <path class="w" stroke="#E07B00" d="M290 190H740"/>
+  <path class="w" stroke="#1F6FD1" d="M290 250H740"/>
+
+  <!-- power: DC-DC output to VIN / GND, input from the 48 V bus -->
+  <path class="w" stroke="#D7263D" d="M290 300H420"/>
+  <path class="w" stroke="#222222" d="M290 335H420"/>
+  <text class="m" x="300" y="293">+12 V</text>
+  <text class="m" x="300" y="352">0 V (output −)</text>
+  <path class="w" stroke="#A15E0B" d="M610 300H690"/>
+  <path class="w" stroke="#A15E0B" stroke-dasharray="6 5" d="M610 335H690"/>
+  <text class="t" x="696" y="304" font-size="12">48 V +</text>
+  <text class="t" x="696" y="339" font-size="12">48 V −</text>
+  <text class="m" x="615" y="356">from the 48 V bus</text>
+
+  <!-- CAN -->
+  <path class="w" stroke="#C99700" d="M290 395H740"/>
+  <path class="w" stroke="#2E9E4F" d="M290 445H740"/>
+  <g stroke="#17212B" stroke-width="1.6" fill="#FFFFFF">
+    <path d="M712 395V407M712 433V445" fill="none"/><rect x="706" y="407" width="12" height="26" rx="2"/>
+  </g>
+  <g class="dot"><circle cx="712" cy="395" r="3.5" fill="#C99700"/><circle cx="712" cy="445" r="3.5" fill="#2E9E4F"/></g>
+  <text class="m" x="640" y="475" text-anchor="middle">120 Ω at the Flatpack end</text>
+  <text class="m" x="640" y="491" text-anchor="middle">twisted pair · вита пара</text>
+  <text class="m" x="460" y="420">the board's own 120 Ω is the other end</text>
+
+  <!-- legend -->
+  <g font-size="12" class="t" transform="translate(320 528)">
+    <path class="w" stroke="#E07B00" d="M0 0H22"/><text x="28" y="4">A</text>
+    <path class="w" stroke="#1F6FD1" d="M50 0H72"/><text x="78" y="4">B</text>
+    <path class="w" stroke="#C99700" d="M100 0H122"/><text x="128" y="4">CAN H</text>
+    <path class="w" stroke="#2E9E4F" d="M180 0H202"/><text x="208" y="4">CAN L</text>
+    <path class="w" stroke="#D7263D" d="M260 0H282"/><text x="288" y="4">+12 V</text>
+    <path class="w" stroke="#222222" d="M340 0H362"/><text x="368" y="4">0 V</text>
+    <path class="w" stroke="#A15E0B" d="M410 0H432"/><text x="438" y="4">48 V side · бік 48 В</text>
+  </g>
+  <rect x="300" y="548" width="650" height="38" rx="8" fill="#F7E0E0"/>
+  <text x="314" y="564" font-size="12" fill="#17212B" font-weight="600">Only A/B to the BMS, only CAN H/L to the Flatpack. Board GND only to the DC-DC output.</text>
+  <text x="314" y="580" font-size="12" fill="#17212B">До BMS лише A/B, до Flatpack лише CAN H/L. GND плати лише до виходу DC-DC.</text>
+</svg>
