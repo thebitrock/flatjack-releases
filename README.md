@@ -29,7 +29,7 @@ FlatJack перетворює сенсорну плату Waveshare на роз�
 - **Charge limit:** for example, keep the battery at 70 % and let the Flatpack feed the house.
 - **Generator mode:** caps the Flatpack's power and raises it slowly, so a small generator copes.
 - **Up to 4 batteries** in parallel, each shown on its own.
-- **Bluetooth:** a spare link to the BMS if its cable fails, or the only link for a battery without a cable.
+- **Bluetooth:** the only link for a battery without a cable, or a spare one if the cable fails (the switch-over is new and not yet tested on a board).
 - **Home Assistant** over MQTT: the device appears there by itself.
 - **Updates itself from the screen:** one button finds the newest version here and installs it.
 - **Ukrainian, English, Russian.**
@@ -103,7 +103,7 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v0.8.0-waveshare-s3-full.bin
 
 ### Bluetooth (optional)
 
-On the web page: **System → Bluetooth → Find a BMS nearby**, then **Add**. Do it while the BMS's cable works, and with the JK phone app closed (the BMS takes one Bluetooth connection at a time). If the cable then stops answering, FlatJack switches to Bluetooth within seconds and keeps charging; over Bluetooth it only reads, settings are changed over the cable.
+On the web page: **System → Bluetooth → Find a BMS nearby**, then **Add**. Do it while the BMS's cable works, and with the JK phone app closed (the BMS takes one Bluetooth connection at a time). If the cable then stops answering, FlatJack is meant to switch to Bluetooth within seconds and keep charging (new: this switch-over has not been tested on a board yet). Over Bluetooth it only reads; settings are changed over the cable.
 
 ### Updates
 
@@ -153,7 +153,7 @@ FlatJack's firmware is free to download, install on your own devices and use. It
 - **Обмеження заряду:** наприклад, тримати батарею на 70 %, а дім живити від Flatpack.
 - **Режим генератора:** обмежує потужність Flatpack і нарощує її плавно, щоб малий генератор витримав.
 - **До 4 батарей** паралельно, кожна показана окремо.
-- **Bluetooth:** запасний зв'язок із BMS, якщо обірвався кабель, або єдиний для батареї без кабелю.
+- **Bluetooth:** єдиний зв'язок для батареї без кабелю або запасний, якщо обірвався кабель (перехід новий і на платі ще не перевірений).
 - **Home Assistant** через MQTT: пристрій з'являється там сам.
 - **Оновлюється з екрана:** одна кнопка знаходить тут найновішу версію і встановлює її.
 - **Українська, англійська, російська.**
@@ -227,7 +227,7 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v0.8.0-waveshare-s3-full.bin
 
 ### Bluetooth (за бажанням)
 
-На вебсторінці: **Система → Bluetooth → Знайти BMS поруч**, потім **Додати**. Робіть це, поки кабель BMS працює, і закрийте застосунок JK на телефоні (BMS приймає одне Bluetooth-з'єднання за раз). Якщо потім кабель перестане відповідати, FlatJack за кілька секунд перейде на Bluetooth і заряджатиме далі; через Bluetooth він лише читає, налаштування змінюються через кабель.
+На вебсторінці: **Система → Bluetooth → Знайти BMS поруч**, потім **Додати**. Робіть це, поки кабель BMS працює, і закрийте застосунок JK на телефоні (BMS приймає одне Bluetooth-з'єднання за раз). Якщо потім кабель перестане відповідати, FlatJack має за кілька секунд перейти на Bluetooth і заряджати далі (нове: цей перехід на платі ще не перевірений). Через Bluetooth він лише читає; налаштування змінюються через кабель.
 
 ### Оновлення
 
