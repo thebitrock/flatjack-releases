@@ -2,7 +2,7 @@
 
 **English** | [Українська](MANUAL.uk.md) · [Quick start](README.md)
 
-Everything FlatJack does, and the details that matter. Things marked **(0.9.0)** arrive with version 0.9.0.
+Everything FlatJack does, and the details that matter. Things marked **(1.0.0)** are new in version 1.0.0.
 
 - [The screen](#the-screen)
 - [The web page](#the-web-page)
@@ -12,7 +12,7 @@ Everything FlatJack does, and the details that matter. Things marked **(0.9.0)**
 - [Generator](#generator)
 - [Several batteries](#several-batteries)
 - [Changing BMS settings](#changing-bms-settings)
-- [Calibration and BMS commands (0.9.0)](#calibration-and-bms-commands-090)
+- [Calibration and BMS commands (1.0.0)](#calibration-and-bms-commands-100)
 - [Alarms](#alarms)
 - [How long the battery lasts](#how-long-the-battery-lasts)
 - [Charge history](#charge-history)
@@ -22,6 +22,7 @@ Everything FlatJack does, and the details that matter. Things marked **(0.9.0)**
 - [Updates and restarts](#updates-and-restarts)
 - [Safety and limits](#safety-and-limits)
 - [Troubleshooting](#troubleshooting)
+- [All screens](#all-screens)
 - [For the technically minded: the web API](#for-the-technically-minded-the-web-api)
 
 ---
@@ -44,7 +45,7 @@ Four tabs, chosen with the icons on the left: home, battery, charging, settings.
 - a battery alarm (see [Alarms](#alarms)) or a Flatpack fault: "Mains voltage too high", "Flatpack overheated", "Flatpack fan", "Overvoltage protection" and others;
 - **No link** / **Looking for battery…** while no BMS answers.
 
-**Top right, beside the clock (0.9.0):** a plug while the BMS answers over its cable, the Bluetooth sign while it answers over Bluetooth, a crossed-out battery while no battery answers.
+**Top right, beside the clock (1.0.0):** a plug while the BMS answers over its cable, the Bluetooth sign while it answers over Bluetooth, a crossed-out battery while no battery answers.
 
 <p>
 <img src="docs/img/manual/en/screen-home-d.png" alt="Home: SOC limit" width="49%">
@@ -106,7 +107,7 @@ Open http://flatjack.local/ or the board's address. Five tabs: **Overview, Cells
 
 **BMS:** the BMS's switches and every setting that can be changed: see [Changing BMS settings](#changing-bms-settings).
 
-**System:** language, the controller (version, uptime, Wi-Fi signal, memory), the batteries found, Bluetooth, the BMS's details (model, versions, serial, manufacture date; (0.9.0) total run time and power-ons, its clock, time to sleep, power, voltage calibration, port protocols), Home Assistant (MQTT), firmware update, raw registers and **Reset Wi-Fi**.
+**System:** language, the controller (version, uptime, Wi-Fi signal, memory), the batteries found, Bluetooth, the BMS's details (model, versions, serial, manufacture date; (1.0.0) total run time and power-ons, its clock, time to sleep, power, voltage calibration, port protocols), Home Assistant (MQTT), firmware update, raw registers and **Reset Wi-Fi**.
 
 ![System](docs/img/manual/en/web-system.png)
 
@@ -193,19 +194,19 @@ On the **BMS** tab, tap a row, type the value and press **Write**. FlatJack writ
 - JK's own order: power-off < over-discharge < SOC 0 % < over-discharge recovery < overcharge recovery < SOC 100 % < RCV < overcharge, and each recovery on the right side of its threshold (temperatures included), heating off above heating on; a rule your BMS's current settings already break is left to the BMS;
 - the charger's own: RFV ≤ RCV, and RCV × cells and RFV × cells within the Flatpack's 43.2–58 V, so a write can never park the charger in Hold.
 
-**Groups on the tab:** Charge (RCV, RCV time, RFV, float mode, charge current and its delay / recovery), Cell protection (over/under-voltage and recovery, power-off, discharge current and delays, short circuit, pre-discharge, smart sleep), Balancing and SOC (balance start, spread, balancer current, SOC 100 % / 0 % voltages, capacity), Temperatures (charge, discharge, MOSFET, heating), and (0.9.0) Signals (buzzer, DRY1, DRY2), Data, Links between cells, Functions, Calibration and commands.
+**Groups on the tab:** Charge (RCV, RCV time, RFV, float mode, charge current and its delay / recovery), Cell protection (over/under-voltage and recovery, power-off, discharge current and delays, short circuit, pre-discharge, smart sleep), Balancing and SOC (balance start, spread, balancer current, SOC 100 % / 0 % voltages, capacity), Temperatures (charge, discharge, MOSFET, heating), and (1.0.0) Signals (buzzer, DRY1, DRY2), Data, Links between cells, Functions, Calibration and commands.
 
 **Details worth knowing:**
 - **Capacity:** any write of the capacity, even the same value, makes the BMS recompute the remaining charge from the cell voltages (on a test battery 100 → 78 %). FlatJack refuses a write that doesn't change it; a real change still resets SOC.
 - **RFV time** is shown but not writable: the BMS stores only RCV time in that register.
 - **Not offered on purpose:** emergency time (writing it, even the same value, started emergency mode), the cell count, the settings password (shown on request, changed in the JK app), the port protocol switch (it would cut the link).
 - **Switches** (charge, discharge, balancing) at the top of the tab act at once. Charge off sends the charger to Hold.
-- **(0.9.0) Functions:** heating, temperature sensors off (with a warning), display always on, smart sleep, PCL off, timed data logging, dry contact pulsing, discharge OCP 2. Float mode is writable here and in Charge.
-- **(0.9.0) Signals:** what turns on the BMS's buzzer and its two dry contacts (DRY1, DRY2): one of 15 sources (cell over/under-voltage, temperatures, SOC, current, …) with a threshold and a release value, written in the source's unit: °C for temperatures, % for SOC, mV, mA.
-- **(0.9.0) Links between cells:** the resistance of each busbar between cells, in mΩ, which the BMS uses to correct cell voltages under current.
+- **(1.0.0) Functions:** heating, temperature sensors off (with a warning), display always on, smart sleep, PCL off, timed data logging, dry contact pulsing, discharge OCP 2. Float mode is writable here and in Charge.
+- **(1.0.0) Signals:** what turns on the BMS's buzzer and its two dry contacts (DRY1, DRY2): one of 15 sources (cell over/under-voltage, temperatures, SOC, current, …) with a threshold and a release value, written in the source's unit: °C for temperatures, % for SOC, mV, mA.
+- **(1.0.0) Links between cells:** the resistance of each busbar between cells, in mΩ, which the BMS uses to correct cell voltages under current.
 - Over **Bluetooth** settings are read only; writes need the cable. With the JK app open over Bluetooth the cable link can be disturbed for minutes (Hold, then charging resumes).
 
-## Calibration and BMS commands (0.9.0)
+## Calibration and BMS commands (1.0.0)
 
 At the end of the BMS tab. Over the cable only. Each asks for confirmation.
 - **Voltage calibration:** type the battery's real voltage measured with an accurate voltmeter at the BMS. Accepted within 2 % of the BMS's reading, because the charger regulates on this voltmeter.
@@ -215,7 +216,7 @@ At the end of the BMS tab. Over the cable only. Each asks for confirmation.
 
 ## Alarms
 
-The BMS's alarm bits are shown by name: on the screen the first in the top bar (red), on the web page in the battery's alarm list, in Home Assistant as a text. Among them: cell over/under-voltage, charge/discharge overcurrent, short circuit, temperatures (charge, discharge, MOSFET, too cold), cell spread, wire resistance, cell count, current sensor, (0.9.0) temperature sensor fault, current limiter, short circuit not cleared, discharge overcurrent 2 / 3, too cold to discharge, GPS lock, and the BMS's user alarms (heater, charger link, relays, temperatures; web and Home Assistant only).
+The BMS's alarm bits are shown by name: on the screen the first in the top bar (red), on the web page in the battery's alarm list, in Home Assistant as a text. Among them: cell over/under-voltage, charge/discharge overcurrent, short circuit, temperatures (charge, discharge, MOSFET, too cold), cell spread, wire resistance, cell count, current sensor, (1.0.0) temperature sensor fault, current limiter, short circuit not cleared, discharge overcurrent 2 / 3, too cold to discharge, GPS lock, and the BMS's user alarms (heater, charger link, relays, temperatures; web and Home Assistant only).
 
 ## How long the battery lasts
 
@@ -285,6 +286,32 @@ FlatJack is its own firmware, not an ESPHome configuration, and Home Assistant n
 | flatjack.local doesn't open | Use the address from the screen's settings tab or your router. |
 | A white frame round the screen | Board revision 1.1 fault: keep **Backlight off too** off. |
 
+## All screens
+
+Every state of the on-board screen, as the demo mode shows it (numbers are made up).
+
+| | | |
+|---|---|---|
+| <img src="docs/img/manual/en/screen-home-a.png" width="300"><br>Charging | <img src="docs/img/manual/en/screen-home-b.png" width="300"><br>Mains outage: on battery | <img src="docs/img/manual/en/screen-home-c.png" width="300"><br>Topping up, nearly full |
+| <img src="docs/img/manual/en/screen-home-d.png" width="300"><br>At the SOC limit | <img src="docs/img/manual/en/screen-home-e.png" width="300"><br>Hold | <img src="docs/img/manual/en/screen-home-f.png" width="300"><br>No battery: the Flatpack alone |
+| <img src="docs/img/manual/en/screen-home-g.png" width="300"><br>A battery alarm | <img src="docs/img/manual/en/screen-home-h.png" width="300"><br>Manual mode | <img src="docs/img/manual/en/screen-home-i.png" width="300"><br>Two batteries |
+| <img src="docs/img/manual/en/screen-home-j.png" width="300"><br>The widest numbers | <img src="docs/img/manual/en/screen-home-k.png" width="300"><br>Nearly empty, Flatpack silent | <img src="docs/img/manual/en/screen-home-l.png" width="300"><br>Battery unplugged, manual |
+| <img src="docs/img/manual/en/screen-home-m.png" width="300"><br>Battery unplugged, still in Auto | <img src="docs/img/manual/en/screen-home-n.png" width="300"><br>On a generator | <img src="docs/img/manual/en/screen-home-o.png" width="300"><br>Discharge switched off |
+| <img src="docs/img/manual/en/screen-home-p.png" width="300"><br>Flatpack fan fault | <img src="docs/img/manual/en/screen-home-q.png" width="300"><br>Three alarms, balancing | <img src="docs/img/manual/en/screen-home-r.png" width="300"><br>Mains and battery both feed the house |
+| <img src="docs/img/manual/en/screen-home-s.png" width="300"><br>Mode Off | <img src="docs/img/manual/en/screen-home-t.png" width="300"><br>Mode Keep | <img src="docs/img/manual/en/screen-home-u.png" width="300"><br>Charge and discharge off |
+| <img src="docs/img/manual/en/screen-home-v.png" width="300"><br>Topping up, nothing flows | <img src="docs/img/manual/en/screen-home-w.png" width="300"><br>BMS over Bluetooth (icon top right) | <img src="docs/img/manual/en/screen-bat-a.png" width="300"><br>Battery: general |
+| <img src="docs/img/manual/en/screen-bat-i.png" width="300"><br>Two batteries: the «1 of 2» chip | <img src="docs/img/manual/en/screen-bat-j.png" width="300"><br>The widest numbers | <img src="docs/img/manual/en/screen-bat-o.png" width="300"><br>Discharge off |
+| <img src="docs/img/manual/en/screen-bat-q.png" width="300"><br>Alarms and balancing | <img src="docs/img/manual/en/screen-bat-u.png" width="300"><br>Charge and discharge off | <img src="docs/img/manual/en/screen-cells-a.png" width="300"><br>Cells |
+| <img src="docs/img/manual/en/screen-cells-i1.png" width="300"><br>32 cells: 17–32 | <img src="docs/img/manual/en/screen-cells-i2.png" width="300"><br>32 cells: 1–16 | <img src="docs/img/manual/en/screen-cells-q.png" width="300"><br>Cells with alarms |
+| <img src="docs/img/manual/en/screen-hist-a.png" width="300"><br>History: 24 h | <img src="docs/img/manual/en/screen-hist-i.png" width="300"><br>History, two batteries | <img src="docs/img/manual/en/screen-charge-a.png" width="300"><br>Auto |
+| <img src="docs/img/manual/en/screen-charge-e.png" width="300"><br>Hold: the reason in the footer | <img src="docs/img/manual/en/screen-charge-f.png" width="300"><br>Manual without a battery | <img src="docs/img/manual/en/screen-charge-h.png" width="300"><br>Manual |
+| <img src="docs/img/manual/en/screen-charge-j.png" width="300"><br>The widest numbers | <img src="docs/img/manual/en/screen-charge-l.png" width="300"><br>Battery unplugged, manual | <img src="docs/img/manual/en/screen-charge-m.png" width="300"><br>No battery: manual mode only |
+| <img src="docs/img/manual/en/screen-charge-n.png" width="300"><br>Generator on | <img src="docs/img/manual/en/screen-charge-s.png" width="300"><br>Off | <img src="docs/img/manual/en/screen-charge-t.png" width="300"><br>Keep |
+| <img src="docs/img/manual/en/screen-set-a.png" width="300"><br>Settings | <img src="docs/img/manual/en/screen-set-sleep.png" width="300"><br>Screen off after 30 min | <img src="docs/img/manual/en/screen-set-f.png" width="300"><br>While the setup network is open |
+| <img src="docs/img/manual/en/screen-dlg-mode.png" width="300"><br>Asking before a mode change | <img src="docs/img/manual/en/screen-dlg-qr.png" width="300"><br>QR code for the phone | <img src="docs/img/manual/en/screen-dlg-wifi.png" width="300"><br>Change Wi-Fi? |
+| <img src="docs/img/manual/en/screen-upd-checking.png" width="300"><br>Update: looking | <img src="docs/img/manual/en/screen-upd-current.png" width="300"><br>Update: newest already | <img src="docs/img/manual/en/screen-upd-new.png" width="300"><br>Update: a new version |
+| <img src="docs/img/manual/en/screen-upd-loading.png" width="300"><br>Update: writing | <img src="docs/img/manual/en/screen-upd-done.png" width="300"><br>Update: done, restarting | <img src="docs/img/manual/en/screen-upd-failed.png" width="300"><br>Update: failed |
+
 ## For the technically minded: the web API
 
 JSON over HTTP, no password; POST needs `Content-Type: application/json`. `b` is the battery number from 0.
@@ -298,7 +325,7 @@ JSON over HTTP, no password; POST needs `Content-Type: application/json`. `b` is
 | POST | `/api/psu/power` | `{p_max}` W, 0 = none, else 100–4000 |
 | POST | `/api/bms/switch` | `{b, name: charge/discharge/balance, on}` |
 | POST | `/api/bms/set` | `{b, key, value}` one setting |
-| POST | `/api/bms/cmd` | `{b, cmd: cal_v/cal_i/clock/restart, value}` (0.9.0) |
+| POST | `/api/bms/cmd` | `{b, cmd: cal_v/cal_i/clock/restart, value}` (1.0.0) |
 | POST | `/api/bms/forget` | `{b}` |
 | GET / POST | `/api/mqtt` | `{host, user, pass}` |
 | POST | `/api/lang` | `{lang: uk/en/ru}` |

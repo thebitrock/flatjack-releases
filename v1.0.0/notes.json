@@ -1,0 +1,18 @@
+{
+ "version": "1.0.0",
+ "uk": [
+  "Більше налаштувань BMS: сигнали, функції, перемички",
+  "Калібрування BMS, її годинник і перезапуск",
+  "Значок дроту чи Bluetooth біля годинника; повний посібник"
+ ],
+ "en": [
+  "More BMS settings: signals, functions, cell links",
+  "BMS calibration, its clock and restart",
+  "Wire or Bluetooth icon by the clock; a full manual"
+ ],
+ "ru": [
+  "Больше настроек BMS: сигналы, функции, перемычки",
+  "Калибровка BMS, её часы и перезапуск",
+  "Значок провода или Bluetooth у часов; полное руководство"
+ ]
+}
