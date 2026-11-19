@@ -141,7 +141,7 @@ The same firmware runs on a plain ESP32 DevKit (38 pins) with a MAX485 and an SN
 
 ### Licence
 
-FlatJack's firmware is free to download, install on your own devices and use. Its source code is not published. It comes as is, without warranty. Full text: [LICENSE.md](LICENSE.md); open-source parts inside it: [THIRD-PARTY.md](THIRD-PARTY.md).
+FlatJack's firmware is free to download, install on your own devices and use. Its source code is not published. It comes as is, without warranty. Full text: [LICENSE.md](LICENSE.md); open-source parts inside it: [THIRD-PARTY.md](THIRD-PARTY.md). For the LGPL libraries each version also has a relinking kit (`…-relink.zip`), to build the firmware with your own modified version of them.
 
 ---
 
@@ -267,7 +267,7 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.0.0-waveshare-s3-full.bin
 
 ### Ліцензія
 
-Прошивку FlatJack можна вільно завантажувати, встановлювати на свої пристрої й використовувати. Вихідний код не публікується. Постачається як є, без гарантій. Повний текст: [LICENSE.md](LICENSE.md); відкриті компоненти всередині: [THIRD-PARTY.md](THIRD-PARTY.md).
+Прошивку FlatJack можна вільно завантажувати, встановлювати на свої пристрої й використовувати. Вихідний код не публікується. Постачається як є, без гарантій. Повний текст: [LICENSE.md](LICENSE.md); відкриті компоненти всередині: [THIRD-PARTY.md](THIRD-PARTY.md). Для бібліотек під LGPL у кожній версії є ще набір для перезбирання (`…-relink.zip`), щоб зібрати прошивку з власною зміненою версією цих бібліотек.
 
 ---
 
@@ -287,3 +287,5 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.0.0-waveshare-s3-full.bin
 |---|---|---|
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.0.0-waveshare-s3.bin](v1.0.0/flatjack-v1.0.0-waveshare-s3.bin) | [flatjack-v1.0.0-waveshare-s3-full.bin](v1.0.0/flatjack-v1.0.0-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.0.0.bin](v1.0.0/flatjack-v1.0.0.bin) | [flatjack-v1.0.0-full.bin](v1.0.0/flatjack-v1.0.0-full.bin) |
+
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.0.0-relink.zip](v1.0.0/flatjack-v1.0.0-relink.zip)
