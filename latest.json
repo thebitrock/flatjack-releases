@@ -1,18 +1,18 @@
 {
- "version": "0.7.3",
+ "version": "0.8.0",
  "uk": [
-  "Заряджено лише тоді, коли батарея справді повна",
-  "Напруга заряду за вольтметром BMS, а не Flatpack",
-  "Шкала заряду на екрані від найменшого до найбільшого"
+  "BMS через Bluetooth (плата Waveshare), коли немає проводу",
+  "Генератор: потужність зростає плавно, дозаряджання коротше",
+  "Після вимкнення мережі батарея знову заряджається повністю"
  ],
  "en": [
-  "Full is shown only once the battery really is full",
-  "The charge voltage is read by the BMS, not the Flatpack",
-  "The screen's charge chart spans its lowest to highest value"
+  "BMS over Bluetooth (Waveshare board) when there is no wire",
+  "Generator: power rises smoothly, topping up ends sooner",
+  "After a mains outage the battery charges to full again"
  ],
  "ru": [
-  "Заряжено только тогда, когда батарея действительно полная",
-  "Напряжение заряда по вольтметру BMS, а не Flatpack",
-  "Шкала заряда на экране от наименьшего до наибольшего"
+  "BMS по Bluetooth (плата Waveshare), когда нет провода",
+  "Генератор: мощность растёт плавно, дозарядка короче",
+  "После отключения сети батарея снова заряжается полностью"
  ]
 }

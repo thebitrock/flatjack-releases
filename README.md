@@ -2,11 +2,26 @@
 
 **[English](#english)** | **[Українська](#українська)**
 
-Released firmware of FlatJack, the ESP32 controller that reads JK-PB BMSes over RS485 and drives an Eltek Flatpack2 over CAN. This repository holds the firmware files only. The newest version is **0.7.3**.
+Released firmware of FlatJack, the ESP32 controller that reads JK-PB BMSes over RS485 and drives an Eltek Flatpack2 over CAN. This repository holds the firmware files only. The newest version is **0.8.0**.
 
-Готові прошивки FlatJack, контролера на ESP32, який читає BMS JK-PB через RS485 і керує Eltek Flatpack2 через CAN. Тут лише файли прошивок. Найновіша версія: **0.7.3**.
+Готові прошивки FlatJack, контролера на ESP32, який читає BMS JK-PB через RS485 і керує Eltek Flatpack2 через CAN. Тут лише файли прошивок. Найновіша версія: **0.8.0**.
 
 ## Versions / Версії
+
+### 0.8.0
+
+- BMS over Bluetooth (Waveshare board) when there is no wire
+- Generator: power rises smoothly, topping up ends sooner
+- After a mains outage the battery charges to full again
+
+- BMS через Bluetooth (плата Waveshare), коли немає проводу
+- Генератор: потужність зростає плавно, дозаряджання коротше
+- Після вимкнення мережі батарея знову заряджається повністю
+
+| | Update / Оновлення | First flash over USB / Перше прошивання через USB |
+|---|---|---|
+| ESP32 DevKit | [flatjack-v0.8.0.bin](v0.8.0/flatjack-v0.8.0.bin) | [flatjack-v0.8.0-full.bin](v0.8.0/flatjack-v0.8.0-full.bin) |
+| Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v0.8.0-waveshare-s3.bin](v0.8.0/flatjack-v0.8.0-waveshare-s3.bin) | [flatjack-v0.8.0-waveshare-s3-full.bin](v0.8.0/flatjack-v0.8.0-waveshare-s3-full.bin) |
 
 ### 0.7.3
 
