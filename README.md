@@ -15,11 +15,13 @@ FlatJack перетворює сенсорну плату Waveshare на роз�
   <img src="docs/img/phone.png" alt="The web page on a phone" width="150">
 </p>
 
-**Newest version / Найновіша версія: 0.8.0** · [Download / Завантажити](#versions--версії) · [Licence / Ліцензія](LICENSE.md)
+**Newest version / Найновіша версія: 0.8.0** · [Download / Завантажити](#versions--версії) · **[Full manual](MANUAL.md) / [Повний посібник](MANUAL.uk.md)** · [Licence / Ліцензія](LICENSE.md)
 
 ---
 
 ## English
+
+This page is the quick start. Everything else, with screenshots (BMS settings, charging details, generator, several batteries, Bluetooth, Home Assistant, ESPHome, troubleshooting): **[the full manual](MANUAL.md)**.
 
 ### What it does
 
@@ -43,7 +45,7 @@ FlatJack перетворює сенсорну плату Waveshare на роз�
 | **JK-PB BMS** (for example JK-PB2A16S20P) | The one with two RJ45 sockets marked RS485-2 / "Parallel". |
 | **Eltek Flatpack2 48 V** | With its usual adapter board or connector, where CAN H and CAN L come out. |
 | **A network cable (RJ45)** | Cut off one end; it goes from the BMS to the board. |
-| **A twisted pair** (one pair of a network cable) and **a 120 Ω resistor** | For CAN, from the board to the Flatpack. The resistor goes at the Flatpack end. |
+| **A twisted pair** (one pair of a network cable) | For CAN, from the board to the Flatpack. No resistor is needed. |
 | **A USB-C cable** | Only for the first flash. |
 
 ### How it fits together
@@ -57,7 +59,7 @@ The Flatpack, the battery (through its BMS) and the inverter share the 48 V wire
 ![Wiring](docs/waveshare-wiring.svg)
 
 1. **BMS → board (RS485):** in the network cable, twist together the wires of pins 2 and 7 (orange and white-brown in a usual T568B cable) and connect them to `485_A`; pins 1 and 8 (white-orange and brown) go to `485_B`. Leave pins 3 and 6 unconnected. Plug the cable into one of the BMS's **RS485-2** sockets, the pair with no CAN socket next to them.
-2. **Flatpack → board (CAN):** CAN H to `CAN_H`, CAN L to `CAN_L`, through one twisted pair. Put the 120 Ω resistor across CAN H and CAN L at the Flatpack end, and switch on the board's own CAN terminator (a small switch on the board).
+2. **Flatpack → board (CAN):** CAN H to `CAN_H`, CAN L to `CAN_L`, through one twisted pair. No resistor is needed at the Flatpack. Switch on the board's own CAN terminator (a small switch on the board).
 3. **Power:** the DC-DC's input to the 48 V bus (+ and −), its output to the board's `VIN` (+12 V) and `GND`.
 
 > [!WARNING]
@@ -117,7 +119,7 @@ Settings, Wi-Fi and the history are kept. The board restarts after an update, an
 | Problem | Try |
 |---|---|
 | "Looking for battery…" for minutes | Swap the `485_A` and `485_B` wires. Check the cable is in an **RS485-2** socket, the DIP address is 1–15, and the UART1 protocol (above). |
-| No Flatpack | Swap `CAN_H` and `CAN_L`. Check both 120 Ω terminators and that the Flatpack has mains or battery power. |
+| No Flatpack | Swap `CAN_H` and `CAN_L`. Check the board's CAN terminator switch and that the Flatpack has mains or battery power. |
 | http://flatjack.local/ doesn't open | Use the address from the bottom of the screen's **Settings** tab. |
 | The phone app can't connect to the BMS | FlatJack is connected to it over Bluetooth. Remove the device on the web page, or leave it: with a working cable FlatJack lets Bluetooth go. |
 | A white glowing frame around the screen | A known fault of Waveshare's board revision 1.1 when the backlight is switched off. Keep **Backlight off too** switched off in Settings. |
@@ -145,6 +147,8 @@ FlatJack's firmware is free to download, install on your own devices and use. It
 
 ## Українська
 
+Ця сторінка: швидкий старт. Усе інше, зі знімками (налаштування BMS, подробиці заряджання, генератор, кілька батарей, Bluetooth, Home Assistant, ESPHome, якщо щось не так): **[повний посібник](MANUAL.uk.md)**.
+
 ### Що він робить
 
 - **Сам заряджає батарею.** Усі напруги й часи бере з налаштувань вашої BMS і проходить заряджання, дозаряджання й «заряджено», як і має добрий зарядний пристрій. Якщо якась комірка вибігає вперед, він пригальмовує.
@@ -167,7 +171,7 @@ FlatJack's firmware is free to download, install on your own devices and use. It
 | **BMS JK-PB** (наприклад JK-PB2A16S20P) | Та, що має два гнізда RJ45 з написом RS485-2 / «Parallel». |
 | **Eltek Flatpack2 48 В** | Зі звичайною перехідною платою чи роз'ємом, де виведені CAN H і CAN L. |
 | **Мережевий кабель (RJ45)** | Один кінець відріжте; він іде від BMS до плати. |
-| **Вита пара** (одна пара мережевого кабелю) і **резистор 120 Ом** | Для CAN, від плати до Flatpack. Резистор ставиться біля Flatpack. |
+| **Вита пара** (одна пара мережевого кабелю) | Для CAN, від плати до Flatpack. Резистор не потрібен. |
 | **Кабель USB-C** | Лише для першого прошивання. |
 
 ### Як це влаштовано
@@ -181,7 +185,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 ![Підключення](docs/waveshare-wiring.svg)
 
 1. **BMS → плата (RS485):** у мережевому кабелі скрутіть разом дроти контактів 2 і 7 (помаранчевий і біло-коричневий у звичайному кабелі T568B) і під'єднайте до `485_A`; контакти 1 і 8 (біло-помаранчевий і коричневий) до `485_B`. Контакти 3 і 6 лишіть вільними. Кабель вставте в одне з гнізд **RS485-2** на BMS, ту пару, біля якої немає гнізда CAN.
-2. **Flatpack → плата (CAN):** CAN H до `CAN_H`, CAN L до `CAN_L`, однією витою парою. Резистор 120 Ом поставте між CAN H і CAN L біля Flatpack, а на платі увімкніть її власний термінатор CAN (маленький перемикач на платі).
+2. **Flatpack → плата (CAN):** CAN H до `CAN_H`, CAN L до `CAN_L`, однією витою парою. Резистор біля Flatpack не потрібен. На платі увімкніть її власний термінатор CAN (маленький перемикач на платі).
 3. **Живлення:** вхід DC-DC до шини 48 В (+ і −), вихід до `VIN` (+12 В) і `GND` плати.
 
 > [!WARNING]
@@ -241,7 +245,7 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v0.8.0-waveshare-s3-full.bin
 | Що | Що спробувати |
 |---|---|
 | «Пошук батареї…» кілька хвилин | Поміняйте місцями дроти `485_A` і `485_B`. Перевірте, що кабель у гнізді **RS485-2**, DIP-адреса 1–15 і протокол UART1 (вище). |
-| Немає Flatpack | Поміняйте місцями `CAN_H` і `CAN_L`. Перевірте обидва термінатори 120 Ом і що Flatpack має живлення від мережі чи батареї. |
+| Немає Flatpack | Поміняйте місцями `CAN_H` і `CAN_L`. Перевірте перемикач термінатора CAN на платі і що Flatpack має живлення від мережі чи батареї. |
 | http://flatjack.local/ не відкривається | Відкрийте адресу знизу вкладки **Налаштування** на екрані. |
 | Застосунок JK не під'єднується до BMS | До неї під'єднаний FlatJack через Bluetooth. Видаліть пристрій на вебсторінці або лишіть як є: коли кабель працює, FlatJack відпускає Bluetooth. |
 | Біла світла рамка по краях екрана | Відома вада плати Waveshare ревізії 1.1, коли вимикається підсвітка. Не вмикайте в налаштуваннях **Вимикати й підсвітку**. |
