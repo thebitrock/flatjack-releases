@@ -278,7 +278,7 @@ FlatJack is its own firmware, not an ESPHome configuration, and Home Assistant n
 |---|---|
 | "Looking for battery…" stays | Swap `485_A` / `485_B`. The cable in an **RS485-2** socket (not the one next to CAN). DIP address 1–15. In the JK app, UART1 protocol 001 (JK BMS RS485 Modbus). |
 | Battery found, then "No link" now and then | The JK app connected over Bluetooth can disturb the cable link: close it. Check the cable's contacts. |
-| No Flatpack | Swap `CAN_H` / `CAN_L`. The board's CAN terminator switch on (no resistor is needed at the Flatpack). The Flatpack powered. |
+| No Flatpack | Swap `CAN_H` / `CAN_L`. A 120 Ω terminator at each end of the CAN cable (the board's switch, a resistor at the Flatpack). The Flatpack powered. |
 | Charging doesn't start in Auto | The Charge tab says why: BMS charge switch off, settings differ between batteries, a battery silent, settings outside the Flatpack's 43.2–58 V. |
 | "Full" while SOC shows 95 % | Normal: Full is the phase. Charging starts again at 90 % after the float time. |
 | SOC jumped to 100 % early | The BMS does that at «SOC 100 % at voltage»; FlatJack's two stages keep below it until the current falls. Check that setting is a bit under RCV. |

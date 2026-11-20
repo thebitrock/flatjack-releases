@@ -76,8 +76,13 @@
   <!-- CAN -->
   <path class="w" stroke="#C99700" d="M290 395H740"/>
   <path class="w" stroke="#2E9E4F" d="M290 445H740"/>
-  <text class="m" x="515" y="420" text-anchor="middle">twisted pair, no resistor needed</text>
-  <text class="m" x="515" y="436" text-anchor="middle">вита пара, резистор не потрібен</text>
+  <g stroke="#17212B" stroke-width="1.6" fill="#FFFFFF">
+    <path d="M712 395V407M712 433V445" fill="none"/><rect x="706" y="407" width="12" height="26" rx="2"/>
+  </g>
+  <g class="dot"><circle cx="712" cy="395" r="3.5" fill="#C99700"/><circle cx="712" cy="445" r="3.5" fill="#2E9E4F"/></g>
+  <text class="m" x="640" y="475" text-anchor="middle">120 Ω at the Flatpack end</text>
+  <text class="m" x="640" y="491" text-anchor="middle">twisted pair · вита пара</text>
+  <text class="m" x="460" y="420">the board's own 120 Ω is the other end</text>
 
   <!-- legend -->
   <g font-size="12" class="t" transform="translate(320 528)">

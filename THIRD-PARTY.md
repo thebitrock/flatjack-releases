@@ -1,8 +1,8 @@
 # Open-source components · Відкриті компоненти
 
-The FlatJack firmware is built with these components. Each is under its own licence.
+The FlatJack firmware is built with these components. Each is under its own licence. The copyright notices and full licence texts of everything inside the firmware, ESP-IDF's components included: [THIRD-PARTY-LICENSES.txt](THIRD-PARTY-LICENSES.txt).
 
-Прошивка FlatJack зібрана з цих компонентів. Кожен під своєю ліцензією.
+Прошивка FlatJack зібрана з цих компонентів. Кожен під своєю ліцензією. Повідомлення про авторські права й повні тексти ліцензій усього, що є в прошивці, зокрема компонентів ESP-IDF: [THIRD-PARTY-LICENSES.txt](THIRD-PARTY-LICENSES.txt).
 
 | Component | Licence | Where |
 |---|---|---|
