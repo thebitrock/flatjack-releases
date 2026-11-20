@@ -142,6 +142,8 @@ All numbers come from the BMS: **RCV** (charge voltage per cell), **RCV time**, 
 
 **Hold.** If a BMS is silent, the settings look wrong or differ between batteries, or every charge switch is off, the Flatpack holds RFV × cells: the battery isn't charged but the house stays fed. Protection (temperature, overvoltage) is the BMS's job: it opens its charge switch. A Hold or Waiting of up to 10 minutes (for example the JK app over Bluetooth briefly cutting the cable link, or a mains blip) continues topping up or Full where it stopped; longer starts again from Charging.
 
+**Why this voltage now (1.1.0).** The Charge tab's "Setpoint breakdown" row adds it up: the stage's target, the cell trim and the BMS-voltmeter correction, e.g. «54.88 V (first stage) − 0.37 correction = 54.51 V», and says when the battery is already above the target, so no current goes in. Under it, the **Decision log** lists what the charger changed and why since the controller started, newest first: each phase change with its cause, the second stage, the topping-up timer starting or pausing, the cell trim, a mains outage, and your changes of mode and limits, each with the setpoint, the battery's voltage, current and SOC at that moment. A restart starts it again.
+
 **After a restart** charging starts again from Charging (one extra topping up after each update).
 
 ## Charge limit

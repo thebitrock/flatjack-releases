@@ -1,18 +1,15 @@
 {
- "version": "1.0.0",
+ "version": "1.1.0",
  "uk": [
-  "Більше налаштувань BMS: сигнали, функції, перемички",
-  "Калібрування BMS, її годинник і перезапуск",
-  "Значок дроту чи Bluetooth біля годинника; повний посібник"
+  "Журнал рішень зарядки: що й чому змінював автомат",
+  "Розрахунок уставки: звідки така напруга й чому немає струму"
  ],
  "en": [
-  "More BMS settings: signals, functions, cell links",
-  "BMS calibration, its clock and restart",
-  "Wire or Bluetooth icon by the clock; a full manual"
+  "Charger decision log: what changed and why",
+  "Setpoint breakdown: why this voltage and why no current"
  ],
  "ru": [
-  "Больше настроек BMS: сигналы, функции, перемычки",
-  "Калибровка BMS, её часы и перезапуск",
-  "Значок провода или Bluetooth у часов; полное руководство"
+  "Журнал решений зарядки: что и почему менял автомат",
+  "Расчёт уставки: откуда такое напряжение и почему нет тока"
  ]
 }
