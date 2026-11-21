@@ -15,7 +15,7 @@ FlatJack перетворює сенсорну плату Waveshare на роз�
   <img src="docs/img/phone.png" alt="The web page on a phone" width="150">
 </p>
 
-**Newest version / Найновіша версія: 1.2.0** · [Download / Завантажити](#versions--версії) · **[Full manual](MANUAL.md) / [Повний посібник](MANUAL.uk.md)** · [Licence / Ліцензія](LICENSE.md)
+**Newest version / Найновіша версія: 1.2.1** · [Download / Завантажити](#versions--версії) · **[Full manual](MANUAL.md) / [Повний посібник](MANUAL.uk.md)** · [Licence / Ліцензія](LICENSE.md)
 
 ---
 
@@ -71,7 +71,7 @@ The Flatpack, the battery (through its BMS) and the inverter share the 48 V wire
 
 ### Put the firmware on the board (once)
 
-You need the file **`flatjack-v1.2.0-waveshare-s3-full.bin`** ([download](v1.2.0/flatjack-v1.2.0-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
+You need the file **`flatjack-v1.2.1-waveshare-s3-full.bin`** ([download](v1.2.1/flatjack-v1.2.1-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
 
 **The easy way, in a browser (Windows, macOS, Linux):**
 
@@ -89,7 +89,7 @@ If no port appears or Connect fails:
 **The command-line way** (any system with Python): `pip install esptool`, then
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.2.0-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.2.1-waveshare-s3-full.bin
 ```
 
 ### First start
@@ -197,7 +197,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 
 ### Прошивка плати (один раз)
 
-Потрібен файл **`flatjack-v1.2.0-waveshare-s3-full.bin`** ([завантажити](v1.2.0/flatjack-v1.2.0-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
+Потрібен файл **`flatjack-v1.2.1-waveshare-s3-full.bin`** ([завантажити](v1.2.1/flatjack-v1.2.1-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
 
 **Найпростіше, у браузері (Windows, macOS, Linux):**
 
@@ -215,7 +215,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 **Через командний рядок** (будь-яка система з Python): `pip install esptool`, далі
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.2.0-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.2.1-waveshare-s3-full.bin
 ```
 
 ### Перший запуск
@@ -272,6 +272,23 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.2.0-waveshare-s3-full.bin
 ---
 
 ## Versions / Версії
+
+### 1.2.1
+
+- Fixes from a code review: Flatpack, charging, BMS, Bluetooth
+- Home Assistant: an empty message no longer clears the power cap
+- Screen: + and − reach 4000 W and 62.5 A, as on the web page
+
+- Виправлення після огляду коду: Flatpack, заряд, BMS, Bluetooth
+- Home Assistant: порожнє повідомлення не знімає ліміт потужності
+- Екран: + і − доходять до 4000 Вт і 62,5 А, як на вебсторінці
+
+| | Update / Оновлення | First flash over USB / Перше прошивання через USB |
+|---|---|---|
+| Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.2.1-waveshare-s3.bin](v1.2.1/flatjack-v1.2.1-waveshare-s3.bin) | [flatjack-v1.2.1-waveshare-s3-full.bin](v1.2.1/flatjack-v1.2.1-waveshare-s3-full.bin) |
+| ESP32 DevKit | [flatjack-v1.2.1.bin](v1.2.1/flatjack-v1.2.1.bin) | [flatjack-v1.2.1-full.bin](v1.2.1/flatjack-v1.2.1-full.bin) |
+
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.2.1-relink.zip](v1.2.1/flatjack-v1.2.1-relink.zip) · [how to use / як користуватися](RELINK.md)
 
 ### 1.2.0
 

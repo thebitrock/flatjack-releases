@@ -65,7 +65,7 @@ Four tabs, chosen with the icons on the left: home, battery, charging, settings.
 <img src="docs/img/manual/en/screen-hist-a.png" alt="Battery: history" width="32%">
 </p>
 
-**Charging tab.** The mode on top (**Off / Keep / Auto / Manual**; a tap asks first and says what follows). In **Auto**: **Charge to** (the SOC limit, 100 % = charge fully) and **Battery current**. In **Manual**: the Flatpack's voltage and current, sent with **Apply**. The last row is the **Generator**: a switch and its power, 300–3000 W (see [Generator](#generator)). Holding + or − steps fast; the value is sent 0.7 s after the last step. The footer says the voltages ("Charging to 55.2 V, then 53.6 V") or why it pauses.
+**Charging tab.** The mode on top (**Off / Keep / Auto / Manual**; a tap asks first and says what follows). In **Auto**: **Charge to** (the SOC limit, 100 % = charge fully) and **Battery current**. In **Manual**: the Flatpack's voltage and current, sent with **Apply**. **Apply** keeps the over-voltage limit at least 0.5 V above the voltage, as the web page's quick control does. The last row is the **Generator**: a switch and its power, 100–4000 W (see [Generator](#generator)). Holding + or − steps fast; the value is sent 0.7 s after the last step. The footer says the voltages ("Charging to 55.2 V, then 53.6 V") or why it pauses.
 
 <p>
 <img src="docs/img/manual/en/screen-charge-a.png" alt="Charging: auto" width="32%">
@@ -159,7 +159,7 @@ A JK BMS recalibrates its SOC only at full charge, so a permanent limit drifts: 
 
 ## Generator
 
-For a small generator, set the Flatpack's **power limit**: on the screen the **Generator** switch with 300–3000 W, on the web page 100–4000 W (0 = none), from Home Assistant `p_max`. Rule of thumb: about 80 % of the generator's rating (1.2 kW generator: 1000 W). The Flatpack draws about 5 % more from its AC side than it gives.
+For a small generator, set the Flatpack's **power limit**: on the screen the **Generator** switch and its power, on the web page (0 = none) or from Home Assistant `p_max`: 100–4000 W everywhere. Rule of thumb: about 80 % of the generator's rating (1.2 kW generator: 1000 W). The Flatpack draws about 5 % more from its AC side than it gives.
 
 <p>
 <img src="docs/img/manual/en/screen-home-n.png" alt="Home: on a generator" width="49%">
@@ -219,7 +219,7 @@ At the end of the BMS tab. Over the cable only. Each asks for confirmation.
 
 ## Alarms
 
-The BMS's alarm bits are shown by name: on the screen the first in the top bar (red), on the web page in the battery's alarm list, in Home Assistant as a text. Among them: cell over/under-voltage, charge/discharge overcurrent, short circuit, temperatures (charge, discharge, MOSFET, too cold), cell spread, wire resistance, cell count, current sensor, (1.0.0) temperature sensor fault, current limiter, short circuit not cleared, discharge overcurrent 2 / 3, too cold to discharge, GPS lock, and the BMS's user alarms (heater, charger link, relays, temperatures; web and Home Assistant only).
+The BMS's alarm bits are shown by name: on the screen the first in the top bar (red; not the BMS's reminder to change its password, a note on the web page), on the web page in the battery's alarm list, in Home Assistant as a text. Among them: cell over/under-voltage, charge/discharge overcurrent, short circuit, temperatures (charge, discharge, MOSFET, too cold), cell spread, wire resistance, cell count, current sensor, (1.0.0) temperature sensor fault, current limiter, short circuit not cleared, discharge overcurrent 2 / 3, too cold to discharge, GPS lock, and the BMS's user alarms (heater, charger link, relays, temperatures; web and Home Assistant only).
 
 ## How long the battery lasts
 

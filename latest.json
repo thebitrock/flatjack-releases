@@ -1,15 +1,18 @@
 {
- "version": "1.2.0",
+ "version": "1.2.1",
  "uk": [
-  "Енергія: кВт·год через Flatpack і батарею, по днях і всього",
-  "ESP32 DevKit: зв'язок із BMS через Bluetooth"
+  "Виправлення після огляду коду: Flatpack, заряд, BMS, Bluetooth",
+  "Home Assistant: порожнє повідомлення не знімає ліміт потужності",
+  "Екран: + і − доходять до 4000 Вт і 62,5 А, як на вебсторінці"
  ],
  "en": [
-  "Energy: kWh through the Flatpack and the battery, by day",
-  "ESP32 DevKit: Bluetooth link to the BMS"
+  "Fixes from a code review: Flatpack, charging, BMS, Bluetooth",
+  "Home Assistant: an empty message no longer clears the power cap",
+  "Screen: + and − reach 4000 W and 62.5 A, as on the web page"
  ],
  "ru": [
-  "Энергия: кВт·ч через Flatpack и батарею, по дням и всего",
-  "ESP32 DevKit: связь с BMS через Bluetooth"
+  "Исправления после ревью кода: Flatpack, заряд, BMS, Bluetooth",
+  "Home Assistant: пустое сообщение не снимает лимит мощности",
+  "Экран: + и − доходят до 4000 Вт и 62,5 А, как на веб-странице"
  ]
 }
