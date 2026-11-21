@@ -15,6 +15,7 @@ Everything FlatJack does, and the details that matter. Things marked **(1.0.0)**
 - [Calibration and BMS commands (1.0.0)](#calibration-and-bms-commands-100)
 - [Alarms](#alarms)
 - [How long the battery lasts](#how-long-the-battery-lasts)
+- [Energy (1.2.0)](#energy-120)
 - [Charge history](#charge-history)
 - [Bluetooth](#bluetooth)
 - [Home Assistant](#home-assistant)
@@ -228,13 +229,23 @@ The BMS's alarm bits are shown by name: on the screen the first in the top bar (
 - **What it learns:** the last minutes' load, a profile of 48 half-hours of your day (learned over about a week of mains-on use), and how the house uses power during outages compared with that profile. A load the profile can't explain (a heater switched on to stay) is taken as lasting.
 - Over a week shows "7+ days". A first day without a profile may be off.
 
+## Energy (1.2.0)
+
+Under the history on the overview, **Energy** counts kWh: today, this month and in total, plus bars by day or by month.
+- **Flatpack gave**: its DC output, V × I of every status frame (5 a second). Of it, **From the generator** while the power limit is on.
+- **From the mains ≈**: an estimate, output ÷ 0.95. The Flatpack reports no input current, so the mains side is not measured.
+- **Into the battery** / **From the battery**: V × I of the BMS, once a second.
+- **Load** = Flatpack − into the battery + from the battery (the inverter runs from the 48 V bus).
+
+The counters are saved every 10 minutes, so a power cut loses at most that. Finished days are kept for years. The first start of this version adds the history's last 30 days. If over a day the Flatpack's count differs from a meter you trust, set **Flatpack current correction**: new = current × real kWh ÷ shown (0.8–1.2). Home Assistant gets five energy sensors for its Energy dashboard.
+
 ## Charge history
 
 Every 2 minutes: voltage, battery current, Flatpack current, SOC, charger phase, temperatures (battery, MOSFET, Flatpack) and cell spread, kept for 30 days on the board (a power cut loses at most 2 minutes). The web chart shows 2 h, 6 h, 1, 3, 7 or 30 days with a crosshair (mouse, finger or arrow keys) and **Download CSV**. The coloured strip on top is the charger's phase. A break in a line: the controller was off or the BMS silent. The history needs internet time (NTP).
 
 ## Bluetooth
 
-The board can reach a JK-PB BMS over Bluetooth, through the BMS's own module (the one the JK phone app uses).
+The board can reach a JK-PB BMS over Bluetooth, through the BMS's own module (the one the JK phone app uses). Both boards have it; the ESP32 DevKit since 1.2.0, where a firmware upload over Wi-Fi switches Bluetooth off and the board restarts afterwards.
 - **Pairing:** **System → Bluetooth → Find a BMS nearby → Add.** Up to 3. Add a BMS while its cable answers: otherwise FlatJack can't tell which wired battery it is. Close the JK app first: a BMS takes one Bluetooth connection at a time.
 - **A spare for the cable:** while the cable answers, Bluetooth stays off. If the cable is silent for 5 s, FlatJack connects over Bluetooth and keeps charging from it; once the cable has answered again for 30 s, Bluetooth is let go. *New: this switch-over has not been tested on a board yet.*
 - **A battery without a cable** works over Bluetooth alone (tested: read, charged to Full, reconnects by itself after restarts).
@@ -249,7 +260,7 @@ FlatJack announces itself over MQTT (Home Assistant 2024.12 or newer):
 2. On the web page, **System → Home Assistant (MQTT)**: the broker as `IP` or `IP:port`, its user and password, **Save**.
 3. The device **FlatJack** appears with the battery (SOC, voltage, current, power, capacity, every cell, temperatures, switches, alarms), the Flatpack (voltage, current, power, mains, temperatures, status), the house load, the charger phase, and controls: automatic charging, battery current, the charge limit and the Flatpack power limit. With several batteries each also has its own device "FlatJack battery N".
 
-Names follow the device's language. Values go unavailable while their source is silent, so automations never act on stale data. Topics: `flatjack/<id>/state` (every 5 s), `flatjack/<id>/status`, `flatjack/<id>/set/auto|i_max|soc_max|p_max`. BMS switches are deliberately not in Home Assistant.
+Names follow the device's language. Values go unavailable while their source is silent, so automations never act on stale data. Topics: `flatjack/<id>/state` (every 5 s), `flatjack/<id>/status`, `flatjack/<id>/set/auto|i_max|soc_max|p_max`. Energy (1.2.0): Flatpack, generator, into and from the battery, load, kWh, `total_increasing`, ready for the Energy dashboard. BMS switches are deliberately not in Home Assistant.
 
 ## ESPHome
 

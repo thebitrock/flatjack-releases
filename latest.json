@@ -1,15 +1,15 @@
 {
- "version": "1.1.0",
+ "version": "1.2.0",
  "uk": [
-  "Журнал рішень зарядки: що й чому змінював автомат",
-  "Розрахунок уставки: звідки така напруга й чому немає струму"
+  "Енергія: кВт·год через Flatpack і батарею, по днях і всього",
+  "ESP32 DevKit: зв'язок із BMS через Bluetooth"
  ],
  "en": [
-  "Charger decision log: what changed and why",
-  "Setpoint breakdown: why this voltage and why no current"
+  "Energy: kWh through the Flatpack and the battery, by day",
+  "ESP32 DevKit: Bluetooth link to the BMS"
  ],
  "ru": [
-  "Журнал решений зарядки: что и почему менял автомат",
-  "Расчёт уставки: откуда такое напряжение и почему нет тока"
+  "Энергия: кВт·ч через Flatpack и батарею, по дням и всего",
+  "ESP32 DevKit: связь с BMS через Bluetooth"
  ]
 }

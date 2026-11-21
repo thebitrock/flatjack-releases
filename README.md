@@ -15,7 +15,7 @@ FlatJack перетворює сенсорну плату Waveshare на роз�
   <img src="docs/img/phone.png" alt="The web page on a phone" width="150">
 </p>
 
-**Newest version / Найновіша версія: 1.1.0** · [Download / Завантажити](#versions--версії) · **[Full manual](MANUAL.md) / [Повний посібник](MANUAL.uk.md)** · [Licence / Ліцензія](LICENSE.md)
+**Newest version / Найновіша версія: 1.2.0** · [Download / Завантажити](#versions--версії) · **[Full manual](MANUAL.md) / [Повний посібник](MANUAL.uk.md)** · [Licence / Ліцензія](LICENSE.md)
 
 ---
 
@@ -71,7 +71,7 @@ The Flatpack, the battery (through its BMS) and the inverter share the 48 V wire
 
 ### Put the firmware on the board (once)
 
-You need the file **`flatjack-v1.1.0-waveshare-s3-full.bin`** ([download](v1.1.0/flatjack-v1.1.0-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
+You need the file **`flatjack-v1.2.0-waveshare-s3-full.bin`** ([download](v1.2.0/flatjack-v1.2.0-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
 
 **The easy way, in a browser (Windows, macOS, Linux):**
 
@@ -89,7 +89,7 @@ If no port appears or Connect fails:
 **The command-line way** (any system with Python): `pip install esptool`, then
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.1.0-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.2.0-waveshare-s3-full.bin
 ```
 
 ### First start
@@ -129,7 +129,7 @@ Settings, Wi-Fi and the history are kept. The board restarts after an update, an
 
 ### Also on an ESP32 DevKit
 
-The same firmware runs on a plain ESP32 DevKit (38 pins) with a MAX485 and an SN65HVD230 module, without a screen: files `flatjack-vX.Y.Z-full.bin` (first flash, at `0x0`, `--chip esp32`) and `flatjack-vX.Y.Z.bin` (updates). Its USB chip needs the Silicon Labs CP210x driver on Windows and macOS.
+The same firmware runs on a plain ESP32 DevKit (38 pins) with a MAX485 and an SN65HVD230 module, without a screen: files `flatjack-vX.Y.Z-full.bin` (first flash, at `0x0`, `--chip esp32`) and `flatjack-vX.Y.Z.bin` (updates). Its USB chip needs the Silicon Labs CP210x driver on Windows and macOS. Bluetooth works on it too (1.2.0); during a firmware update over Wi-Fi it is switched off, and the board restarts afterwards (it has too little memory for both).
 
 <details><summary>DevKit wiring</summary>
 
@@ -197,7 +197,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 
 ### Прошивка плати (один раз)
 
-Потрібен файл **`flatjack-v1.1.0-waveshare-s3-full.bin`** ([завантажити](v1.1.0/flatjack-v1.1.0-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
+Потрібен файл **`flatjack-v1.2.0-waveshare-s3-full.bin`** ([завантажити](v1.2.0/flatjack-v1.2.0-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
 
 **Найпростіше, у браузері (Windows, macOS, Linux):**
 
@@ -215,7 +215,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 **Через командний рядок** (будь-яка система з Python): `pip install esptool`, далі
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.1.0-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.2.0-waveshare-s3-full.bin
 ```
 
 ### Перший запуск
@@ -255,7 +255,7 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.1.0-waveshare-s3-full.bin
 
 ### Також на ESP32 DevKit
 
-Та сама прошивка працює на звичайній ESP32 DevKit (38 контактів) з модулями MAX485 і SN65HVD230, без екрана: файли `flatjack-vX.Y.Z-full.bin` (перше прошивання, з `0x0`, `--chip esp32`) і `flatjack-vX.Y.Z.bin` (оновлення). Її USB-мікросхемі у Windows і macOS потрібен драйвер Silicon Labs CP210x.
+Та сама прошивка працює на звичайній ESP32 DevKit (38 контактів) з модулями MAX485 і SN65HVD230, без екрана: файли `flatjack-vX.Y.Z-full.bin` (перше прошивання, з `0x0`, `--chip esp32`) і `flatjack-vX.Y.Z.bin` (оновлення). Її USB-мікросхемі у Windows і macOS потрібен драйвер Silicon Labs CP210x. Bluetooth на ній теж працює (1.2.0); під час оновлення прошивки через Wi-Fi він вимикається, а плата потім перезапускається (пам'яті на обидва не вистачає).
 
 <details><summary>Підключення DevKit</summary>
 
@@ -272,6 +272,21 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.1.0-waveshare-s3-full.bin
 ---
 
 ## Versions / Версії
+
+### 1.2.0
+
+- Energy: kWh through the Flatpack and the battery, by day
+- ESP32 DevKit: Bluetooth link to the BMS
+
+- Енергія: кВт·год через Flatpack і батарею, по днях і всього
+- ESP32 DevKit: зв'язок із BMS через Bluetooth
+
+| | Update / Оновлення | First flash over USB / Перше прошивання через USB |
+|---|---|---|
+| Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.2.0-waveshare-s3.bin](v1.2.0/flatjack-v1.2.0-waveshare-s3.bin) | [flatjack-v1.2.0-waveshare-s3-full.bin](v1.2.0/flatjack-v1.2.0-waveshare-s3-full.bin) |
+| ESP32 DevKit | [flatjack-v1.2.0.bin](v1.2.0/flatjack-v1.2.0.bin) | [flatjack-v1.2.0-full.bin](v1.2.0/flatjack-v1.2.0-full.bin) |
+
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.2.0-relink.zip](v1.2.0/flatjack-v1.2.0-relink.zip) · [how to use / як користуватися](RELINK.md)
 
 ### 1.1.0
 

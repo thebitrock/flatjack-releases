@@ -1,0 +1,15 @@
+{
+ "version": "1.2.0",
+ "uk": [
+  "Енергія: кВт·год через Flatpack і батарею, по днях і всього",
+  "ESP32 DevKit: зв'язок із BMS через Bluetooth"
+ ],
+ "en": [
+  "Energy: kWh through the Flatpack and the battery, by day",
+  "ESP32 DevKit: Bluetooth link to the BMS"
+ ],
+ "ru": [
+  "Энергия: кВт·ч через Flatpack и батарею, по дням и всего",
+  "ESP32 DevKit: связь с BMS через Bluetooth"
+ ]
+}
