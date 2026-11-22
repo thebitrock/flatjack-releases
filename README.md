@@ -1,40 +1,87 @@
-# FlatJack
-
-**[English](#english)** | **[Українська](#українська)**
-
-FlatJack turns a Waveshare touch-screen board into a smart charger controller for a home battery: it reads a **JK-PB BMS** and tells an **Eltek Flatpack2** rectifier how to charge the battery. A screen on the wall, a web page on your phone, no cloud.
-
-FlatJack перетворює сенсорну плату Waveshare на розумний контролер заряджання домашньої батареї: він читає **BMS JK-PB** і керує випрямлячем **Eltek Flatpack2**, щоб той правильно заряджав батарею. Екран на стіні, сторінка на телефоні, без хмари.
-
 <p align="center">
-  <img src="docs/img/screen-home-en.png" alt="The screen: home" width="420">
-  <img src="docs/img/screen-cells-en.png" alt="The screen: cells" width="420">
-</p>
-<p align="center">
-  <img src="docs/img/overview.png" alt="The web page on a computer" width="560">
-  <img src="docs/img/phone.png" alt="The web page on a phone" width="150">
+  <img src="docs/img/readme/hero-en.png" alt="FlatJack: the touch screen on the wall and the web page on a phone, both showing the battery charging" width="100%">
 </p>
 
-**Newest version / Найновіша версія: 1.3.0** · [Download / Завантажити](#versions--версії) · **[Full manual](MANUAL.md) / [Повний посібник](MANUAL.uk.md)** · [Licence / Ліцензія](LICENSE.md)
+<h3 align="center">A smart charger for your home battery<br>Розумне заряджання домашньої батареї</h3>
+
+<p align="center">
+FlatJack turns an <b>Eltek Flatpack2</b> rectifier and a <b>JK BMS</b> into a charger that knows your battery,<br>with a touch screen on the wall and a web page on your phone. No cloud, no app, no subscription.
+</p>
+<p align="center">
+FlatJack робить із випрямляча <b>Eltek Flatpack2</b> та <b>BMS JK</b> зарядний пристрій, що знає вашу батарею:<br>сенсорний екран на стіні й сторінка на телефоні. Без хмари, без застосунку, без підписки.
+</p>
+
+<p align="center">
+  <a href="#versions--версії"><img alt="Version 1.3.0" src="https://img.shields.io/badge/version-1.3.0-2ea44f?style=for-the-badge"></a>
+  <img alt="Free firmware" src="https://img.shields.io/badge/firmware-free-3c8cdc?style=for-the-badge">
+  <img alt="Home Assistant over MQTT" src="https://img.shields.io/badge/Home%20Assistant-MQTT-41bdf5?style=for-the-badge&logo=homeassistant&logoColor=white">
+  <img alt="Ukrainian, English, Russian" src="https://img.shields.io/badge/UA%20%C2%B7%20EN%20%C2%B7%20RU-6b7a89?style=for-the-badge">
+</p>
+
+<p align="center">
+  <b><a href="#english">English</a></b> &nbsp;·&nbsp; <b><a href="#українська">Українська</a></b> &nbsp;·&nbsp; <b><a href="#versions--версії">⬇️ Download / Завантажити 1.3.0</a></b> &nbsp;·&nbsp; <b><a href="MANUAL.md">📖 Manual</a> / <a href="MANUAL.uk.md">Посібник</a></b> &nbsp;·&nbsp; <a href="LICENSE.md">Licence / Ліцензія</a>
+</p>
 
 ---
 
 ## English
 
-This page is the quick start. Everything else, with screenshots (BMS settings, charging details, generator, several batteries, Bluetooth, Home Assistant, ESPHome, troubleshooting): **[the full manual](MANUAL.md)**.
+**FlatJack** reads your **JK-PB BMS** and tells an **Eltek Flatpack2** exactly how to charge the battery. It runs on a Waveshare 5-inch touch board that already has Wi-Fi, Bluetooth, RS485 and CAN on it.
 
 ### What it does
 
-- **Charges the battery by itself.** It takes every voltage and time from your BMS settings and goes through charging, topping up and full, like a good charger should. A cell that runs high slows it down.
-- **Shows everything on a 5" touch screen:** charge level, power from the mains and to the house, how long the battery will last, every cell, the charge history of the day.
-- **Works from your phone or computer too:** the same values, the battery's settings, a 30-day history with charts.
-- **Charge limit:** for example, keep the battery at 70 % and let the Flatpack feed the house.
-- **Generator mode:** caps the Flatpack's power and raises it slowly, so a small generator copes.
-- **Up to 4 batteries** in parallel, each shown on its own.
-- **Bluetooth:** the only link for a battery without a cable, or a spare one if the cable fails (the switch-over is new and not yet tested on a board).
-- **Home Assistant** over MQTT: the device appears there by itself.
-- **Updates itself from the screen:** one button finds the newest version here and installs it.
-- **Ukrainian, English, Russian.**
+<table>
+<tr>
+<td width="33%" valign="top"><b>🔋 Charges it right</b><br>Follows your BMS the way a good inverter does: its stages, its voltages, its timer. Set them once in the JK app.</td>
+<td width="33%" valign="top"><b>🌙 Ready for outages</b><br>Shows how long the battery will last without mains, learned from your own home's usage.</td>
+<td width="33%" valign="top"><b>📱 On the wall and in your pocket</b><br>A bright 5" touch screen, and a web page on any phone or computer at home. No app, no account.</td>
+</tr>
+<tr>
+<td valign="top"><b>⛽ Generator friendly</b><br>Caps the Flatpack's power and raises it gently, so a small generator copes.</td>
+<td valign="top"><b>🏠 Home Assistant</b><br>Enter your MQTT broker once and FlatJack appears there by itself: values, energy counters, controls.</td>
+<td valign="top"><b>🔄 Updates from the screen</b><br>A button on the screen finds the newest version and installs it. Free to use, in Ukrainian, English and Russian.</td>
+</tr>
+</table>
+
+### 📟 On the wall
+
+<p align="center"><img src="docs/img/readme/en/screen.gif" width="760" alt="The touch screen showing in turn: home, the battery, its cells, the day's history, charging, and a QR code that opens the web page on a phone"></p>
+
+Big numbers you can read at a glance: where the power comes from and where it goes, the charge level, the time to full or to empty, every cell, the day's charge history. Charging modes, the charge limit and the generator's power are a tap away; a QR code opens the web page on your phone.
+
+### 📱 In your pocket
+
+<p align="center">
+  <img src="docs/img/readme/en/phone-light.png" width="32%" alt="The web page on a phone: the overview, light theme">
+  <img src="docs/img/readme/en/phone-dark.png" width="32%" alt="The web page on a phone: the overview, dark theme">
+  <img src="docs/img/readme/en/phone-charge.png" width="32%" alt="The web page on a phone: what the charger is doing now and why">
+</p>
+
+Open **http://flatjack.local** on a phone or a computer: the same live values, the charging controls, every BMS setting, and what the charger is doing right now and why, in plain words. Light or dark, as your phone is set.
+
+### 📈 Every cell, every day
+
+<p align="center"><img src="docs/img/readme/en/desk-home.png" alt="The web page on a computer: the overview and the charge history of an evening"></p>
+<p align="center"><img src="docs/img/readme/en/desk-cells.png" alt="The web page on a computer, dark theme: every cell's voltage and balance wire"></p>
+
+Charts of the charge level, power, voltage, temperatures and cell spread, from 2 hours to 30 days; every cell with its balance wire; energy counters in kWh; the history as a CSV file.
+
+**Also:** a charge limit (keep the battery at 70 % and let the Flatpack feed the house) · up to 4 batteries in parallel · Bluetooth instead of the cable (or as a spare: see Bluetooth below) · a log of the charger's decisions · the BMS settings, with checks that refuse a value that makes no sense.
+
+<sub>The screen and the phone above show a demonstration charge; the charts and the cells are a real evening.</sub>
+
+### 🛡️ When something goes wrong
+
+- **The BMS stays in charge of safety.** Its own protections (cell over-voltage, temperature, current) work as always; FlatJack only drives the charger.
+- **If the BMS goes silent**, or its settings look wrong, Auto and Keep end the charge and set the Flatpack to the float voltage (RFV), so the house stays fed. Manual is yours: FlatJack keeps the voltage and current you set.
+- **If the board itself stops**, the Flatpack goes on its own, within about 15 seconds, to a fallback voltage FlatJack gave it in advance, with no current limit: the float voltage in Auto and Keep, your voltage in Manual, and one that charges nothing in Off or while a generator limit is set.
+- **No cloud.** Charging, the screen and the web page work on your home network alone; the internet only sets the clock (for the charts) and brings updates.
+
+### How it fits together
+
+![How it fits together](docs/waveshare-system.svg)
+
+The Flatpack, the battery (through its BMS) and the inverter share the 48 V wires. FlatJack only talks to them: RS485 to the BMS, CAN to the Flatpack, Wi-Fi to your phone. The board takes its power from the 48 V through the isolated DC-DC.
 
 ### What to buy
 
@@ -48,11 +95,13 @@ This page is the quick start. Everything else, with screenshots (BMS settings, c
 | **A twisted pair** (one pair of a network cable) and **a 120 Ω resistor** | For CAN, from the board to the Flatpack. The resistor goes at the Flatpack end. |
 | **A USB-C cable** | Only for the first flash. |
 
-### How it fits together
+### 🚀 Set it up in three steps
 
-![How it fits together](docs/waveshare-system.svg)
+1. **Put the firmware on the board** from your browser: a minute or two, nothing to install ([below](#put-the-firmware-on-the-board-once)).
+2. **Connect four wires and the power:** RS485 to the BMS, CAN to the Flatpack, 12 V from the isolated DC-DC ([below](#wiring)).
+3. **Join your Wi-Fi and choose Auto.** The battery and the Flatpack are found by themselves ([below](#first-start)).
 
-The Flatpack, the battery (through its BMS) and the inverter share the 48 V wires. FlatJack only talks to them: RS485 to the BMS, CAN to the Flatpack, Wi-Fi to your phone. The board takes its power from the 48 V through the isolated DC-DC.
+Everything else, with screenshots (BMS settings, charging details, generator, several batteries, Bluetooth, Home Assistant, ESPHome, troubleshooting): **[the full manual](MANUAL.md)**.
 
 ### Wiring
 
@@ -81,7 +130,8 @@ You need the file **`flatjack-v1.3.0-waveshare-s3-full.bin`** ([download](v1.3.0
 4. Under **Flash Address** type `0x0`, choose the `…-waveshare-s3-full.bin` file and press **Program**. It takes a minute or two.
 5. When it says it is done, press the board's **RESET** button (or unplug and plug the cable back in).
 
-If no port appears or Connect fails:
+<details><summary>No port appears, or Connect fails; the command-line way</summary>
+
 - **Windows 10/11 and macOS** need no driver for this board. Try another cable: many USB-C cables only charge.
 - **Linux:** allow yourself to use serial ports, then log out and in again: `sudo usermod -aG dialout $USER` (Arch: `uucp` instead of `dialout`).
 - Put the board into flashing mode by hand: hold **BOOT**, press and release **RESET**, release **BOOT**, then press Connect again.
@@ -91,6 +141,8 @@ If no port appears or Connect fails:
 ```sh
 esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
 ```
+
+</details>
 
 ### First start
 
@@ -147,20 +199,66 @@ FlatJack's firmware is free to download, install on your own devices and use. It
 
 ## Українська
 
-Ця сторінка: швидкий старт. Усе інше, зі знімками (налаштування BMS, подробиці заряджання, генератор, кілька батарей, Bluetooth, Home Assistant, ESPHome, якщо щось не так): **[повний посібник](MANUAL.uk.md)**.
+<p align="center">
+  <img src="docs/img/readme/hero-uk.png" alt="FlatJack: сенсорний екран на стіні та вебсторінка на телефоні, обидва показують заряджання батареї" width="100%">
+</p>
+
+**FlatJack** читає вашу **BMS JK-PB** і підказує **Eltek Flatpack2**, як саме заряджати батарею. Він працює на сенсорній платі Waveshare 5", де вже є Wi-Fi, Bluetooth, RS485 і CAN.
 
 ### Що він робить
 
-- **Сам заряджає батарею.** Усі напруги й часи бере з налаштувань вашої BMS і проходить заряджання, дозаряджання й «заряджено», як і має добрий зарядний пристрій. Якщо якась комірка вибігає вперед, він пригальмовує.
-- **Показує все на сенсорному екрані 5":** рівень заряду, потужність із мережі й у дім, на скільки вистачить батареї, кожну комірку, історію заряду за день.
-- **Працює й з телефона чи комп'ютера:** ті самі значення, налаштування батареї, історія за 30 днів із графіками.
-- **Обмеження заряду:** наприклад, тримати батарею на 70 %, а дім живити від Flatpack.
-- **Режим генератора:** обмежує потужність Flatpack і нарощує її плавно, щоб малий генератор витримав.
-- **До 4 батарей** паралельно, кожна показана окремо.
-- **Bluetooth:** єдиний зв'язок для батареї без кабелю або запасний, якщо обірвався кабель (перехід новий і на платі ще не перевірений).
-- **Home Assistant** через MQTT: пристрій з'являється там сам.
-- **Оновлюється з екрана:** одна кнопка знаходить тут найновішу версію і встановлює її.
-- **Українська, англійська, російська.**
+<table>
+<tr>
+<td width="33%" valign="top"><b>🔋 Заряджає правильно</b><br>Виконує стадії, напруги й таймер вашої BMS, як добрий інвертор. Налаштуйте їх один раз у застосунку JK.</td>
+<td width="33%" valign="top"><b>🌙 Готовий до відключень</b><br>Показує, на скільки вистачить батареї без мережі, за споживанням саме вашого дому.</td>
+<td width="33%" valign="top"><b>📱 На стіні й у кишені</b><br>Яскравий сенсорний екран 5" і сторінка на будь-якому телефоні чи комп'ютері вдома. Без застосунку й облікового запису.</td>
+</tr>
+<tr>
+<td valign="top"><b>⛽ Дружить із генератором</b><br>Обмежує потужність Flatpack і нарощує її плавно, щоб малий генератор витримав.</td>
+<td valign="top"><b>🏠 Home Assistant</b><br>Вкажіть свій MQTT-брокер один раз, і FlatJack з'явиться там сам: показники, лічильники енергії, керування.</td>
+<td valign="top"><b>🔄 Оновлення з екрана</b><br>Кнопка на екрані знаходить найновішу версію і встановлює її. Безкоштовно, українською, англійською й російською.</td>
+</tr>
+</table>
+
+### 📟 На стіні
+
+<p align="center"><img src="docs/img/readme/uk/screen.gif" width="760" alt="Сенсорний екран показує по черзі: головну, батарею, її комірки, історію за день, заряджання й QR-код, що відкриває вебсторінку на телефоні"></p>
+
+Великі цифри, які видно з першого погляду: звідки береться енергія й куди йде, рівень заряду, скільки до повного чи до порожнього, кожна комірка, історія заряду за день. Режими заряджання, межа заряду й потужність генератора за одне торкання; QR-код відкриває вебсторінку на телефоні.
+
+### 📱 У кишені
+
+<p align="center">
+  <img src="docs/img/readme/uk/phone-light.png" width="32%" alt="Вебсторінка на телефоні: огляд, світла тема">
+  <img src="docs/img/readme/uk/phone-dark.png" width="32%" alt="Вебсторінка на телефоні: огляд, темна тема">
+  <img src="docs/img/readme/uk/phone-charge.png" width="32%" alt="Вебсторінка на телефоні: що зарядний робить зараз і чому">
+</p>
+
+Відкрийте **http://flatjack.local** на телефоні чи комп'ютері: ті самі живі значення, керування заряджанням, усі налаштування BMS і що зарядний робить саме зараз і чому, звичайними словами. Світла чи темна тема, як на телефоні.
+
+### 📈 Кожна комірка, кожен день
+
+<p align="center"><img src="docs/img/readme/uk/desk-home.png" alt="Вебсторінка на комп'ютері: огляд та історія заряду за вечір"></p>
+<p align="center"><img src="docs/img/readme/uk/desk-cells.png" alt="Вебсторінка на комп'ютері, темна тема: напруга кожної комірки та її балансувальний дріт"></p>
+
+Графіки рівня заряду, потужності, напруги, температур і розкиду комірок, від 2 годин до 30 днів; кожна комірка з її балансувальним дротом; лічильники енергії в кВт·год; історія й файлом CSV.
+
+**А ще:** межа заряду (тримати батарею на 70 %, а дім живити від Flatpack) · до 4 батарей паралельно · Bluetooth замість кабелю (або як запасний: див. Bluetooth нижче) · журнал рішень зарядного · налаштування BMS з перевірками, що не приймуть безглуздого значення.
+
+<sub>Екран і телефон угорі показують демонстраційне заряджання; графіки й комірки взяті зі справжнього вечора.</sub>
+
+### 🛡️ Коли щось іде не так
+
+- **За безпеку й далі відповідає BMS.** Її власні захисти (перенапруга комірок, температура, струм) працюють як завжди; FlatJack лише керує зарядним.
+- **Якщо BMS замовкла** або її налаштування виглядають хибними, у режимах «Авто» й «Підтримка» FlatJack припиняє заряджання й виставляє Flatpack на напругу RFV, тож дім живиться далі. Режим «Вручну» ваш: FlatJack тримає задані вами напругу й струм.
+- **Якщо зупиниться сама плата**, Flatpack приблизно за 15 секунд сам перейде на запасну напругу, яку FlatJack задав йому заздалегідь, без обмеження струму: RFV у режимах «Авто» й «Підтримка», вашу напругу в режимі «Вручну» і таку, що нічого не заряджає, у режимі «Вимкнено» або поки задане обмеження для генератора.
+- **Без хмари.** Заряджання, екран і вебсторінка працюють у домашній мережі; інтернет лише виставляє годинник (для графіків) і приносить оновлення.
+
+### Як це влаштовано
+
+![Як це влаштовано](docs/waveshare-system.svg)
+
+Flatpack, батарея (через свою BMS) та інвертор сидять на одних дротах 48 В. FlatJack лише розмовляє з ними: RS485 із BMS, CAN із Flatpack, Wi-Fi з вашим телефоном. Живлення плата бере з тих самих 48 В через ізольований DC-DC.
 
 ### Що купити
 
@@ -174,11 +272,13 @@ FlatJack's firmware is free to download, install on your own devices and use. It
 | **Вита пара** (одна пара мережевого кабелю) і **резистор 120 Ом** | Для CAN, від плати до Flatpack. Резистор ставиться біля Flatpack. |
 | **Кабель USB-C** | Лише для першого прошивання. |
 
-### Як це влаштовано
+### 🚀 Три кроки до запуску
 
-![Як це влаштовано](docs/waveshare-system.svg)
+1. **Прошийте плату** з браузера: хвилина-дві, нічого не треба встановлювати ([нижче](#прошивка-плати-один-раз)).
+2. **Під'єднайте чотири дроти й живлення:** RS485 до BMS, CAN до Flatpack, 12 В від ізольованого DC-DC ([нижче](#підключення)).
+3. **Під'єднайте плату до Wi-Fi й виберіть «Авто».** Батарея й Flatpack знайдуться самі ([нижче](#перший-запуск)).
 
-Flatpack, батарея (через свою BMS) та інвертор сидять на одних дротах 48 В. FlatJack лише розмовляє з ними: RS485 із BMS, CAN із Flatpack, Wi-Fi з вашим телефоном. Живлення плата бере з тих самих 48 В через ізольований DC-DC.
+Усе інше, зі знімками (налаштування BMS, подробиці заряджання, генератор, кілька батарей, Bluetooth, Home Assistant, ESPHome, якщо щось не так): **[повний посібник](MANUAL.uk.md)**.
 
 ### Підключення
 
@@ -207,7 +307,8 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 4. У полі **Flash Address** введіть `0x0`, виберіть файл `…-waveshare-s3-full.bin` і натисніть **Program**. Це займає хвилину-дві.
 5. Коли напише, що готово, натисніть на платі кнопку **RESET** (або висмикніть і знову вставте кабель).
 
-Якщо порт не з'являється або Connect не вдається:
+<details><summary>Порт не з'являється або Connect не вдається; через командний рядок</summary>
+
 - **Windows 10/11 і macOS** не потребують драйвера для цієї плати. Спробуйте інший кабель: багато кабелів USB-C лише заряджають.
 - **Linux:** дозвольте собі доступ до послідовних портів і перезайдіть у систему: `sudo usermod -aG dialout $USER` (Arch: `uucp` замість `dialout`).
 - Переведіть плату в режим прошивання вручну: затисніть **BOOT**, натисніть і відпустіть **RESET**, відпустіть **BOOT**, тоді знову Connect.
@@ -217,6 +318,8 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 ```sh
 esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
 ```
+
+</details>
 
 ### Перший запуск
 
@@ -288,8 +391,6 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.3.0-waveshare-s3.bin](v1.3.0/flatjack-v1.3.0-waveshare-s3.bin) | [flatjack-v1.3.0-waveshare-s3-full.bin](v1.3.0/flatjack-v1.3.0-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.3.0.bin](v1.3.0/flatjack-v1.3.0.bin) | [flatjack-v1.3.0-full.bin](v1.3.0/flatjack-v1.3.0-full.bin) |
 
-LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.3.0-relink.zip](v1.3.0/flatjack-v1.3.0-relink.zip) · [how to use / як користуватися](RELINK.md)
-
 ### 1.2.1
 
 - Fixes from a code review: Flatpack, charging, BMS, Bluetooth
@@ -305,8 +406,6 @@ LGPL relinking kit / Набір для перезбирання (LGPL): [flatjac
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.2.1-waveshare-s3.bin](v1.2.1/flatjack-v1.2.1-waveshare-s3.bin) | [flatjack-v1.2.1-waveshare-s3-full.bin](v1.2.1/flatjack-v1.2.1-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.2.1.bin](v1.2.1/flatjack-v1.2.1.bin) | [flatjack-v1.2.1-full.bin](v1.2.1/flatjack-v1.2.1-full.bin) |
 
-LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.2.1-relink.zip](v1.2.1/flatjack-v1.2.1-relink.zip) · [how to use / як користуватися](RELINK.md)
-
 ### 1.2.0
 
 - Energy: kWh through the Flatpack and the battery, by day
@@ -320,8 +419,6 @@ LGPL relinking kit / Набір для перезбирання (LGPL): [flatjac
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.2.0-waveshare-s3.bin](v1.2.0/flatjack-v1.2.0-waveshare-s3.bin) | [flatjack-v1.2.0-waveshare-s3-full.bin](v1.2.0/flatjack-v1.2.0-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.2.0.bin](v1.2.0/flatjack-v1.2.0.bin) | [flatjack-v1.2.0-full.bin](v1.2.0/flatjack-v1.2.0-full.bin) |
 
-LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.2.0-relink.zip](v1.2.0/flatjack-v1.2.0-relink.zip) · [how to use / як користуватися](RELINK.md)
-
 ### 1.1.0
 
 - Charger decision log: what changed and why
@@ -334,8 +431,6 @@ LGPL relinking kit / Набір для перезбирання (LGPL): [flatjac
 |---|---|---|
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.1.0-waveshare-s3.bin](v1.1.0/flatjack-v1.1.0-waveshare-s3.bin) | [flatjack-v1.1.0-waveshare-s3-full.bin](v1.1.0/flatjack-v1.1.0-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.1.0.bin](v1.1.0/flatjack-v1.1.0.bin) | [flatjack-v1.1.0-full.bin](v1.1.0/flatjack-v1.1.0-full.bin) |
-
-LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.1.0-relink.zip](v1.1.0/flatjack-v1.1.0-relink.zip) · [how to use / як користуватися](RELINK.md)
 
 ### 1.0.0
 
@@ -351,5 +446,3 @@ LGPL relinking kit / Набір для перезбирання (LGPL): [flatjac
 |---|---|---|
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.0.0-waveshare-s3.bin](v1.0.0/flatjack-v1.0.0-waveshare-s3.bin) | [flatjack-v1.0.0-waveshare-s3-full.bin](v1.0.0/flatjack-v1.0.0-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.0.0.bin](v1.0.0/flatjack-v1.0.0.bin) | [flatjack-v1.0.0-full.bin](v1.0.0/flatjack-v1.0.0-full.bin) |
-
-LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.0.0-relink.zip](v1.0.0/flatjack-v1.0.0-relink.zip) · [how to use / як користуватися](RELINK.md)
