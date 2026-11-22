@@ -127,6 +127,12 @@ The mode is remembered. Auto and Keep come back by themselves after a restart or
 
 All numbers come from the BMS: **RCV** (charge voltage per cell), **RCV time**, **RFV** (float voltage per cell), **RFV time**, **float mode**, and «SOC 100 % at voltage». Change them in the BMS and charging follows at once.
 
+**The BMS leads (1.3.0).** A JK BMS with firmware 19.10 or newer shows its own charge stage, and FlatJack follows it as an inverter would: Charging and Topping up at RCV × cells, Full at RFV × cells. The BMS decides when to move on: topping up starts once its own voltmeter reads more than RCV × cells (so FlatJack aims 0.07 V higher), lasts the RCV time by the BMS's own timer, which never pauses, and then goes to Full if the battery is above «SOC 100 % at voltage» × cells, else back to Charging. Full ends when the SOC has fallen by **Re-Bulk SOC** since Full began. With float mode off the BMS stays at Charging and asks for RCV for good. The Charge tab shows the BMS's stage and its time. The mode, charge limit, Keep, battery current, power cap and Hold work as below. There is no cell trim at the BMS's voltages: the BMS's own cell overvoltage protection guards the cells.
+- At a high current the battery reaches RCV × cells early, so the BMS starts topping up, and shows 100 %, long before the battery is full. **Two-stage charge**, a switch on the Charge tab (off by default), helps: while the BMS is at Charging, FlatJack first holds the battery at the first stage below, until a minute of tail current, and only then gives RCV.
+- Re-Bulk SOC may be as low as 1 % (it is on our test BMS): Full then ends after half a per cent of discharge, and a 30-minute topping up follows every small discharge. Raise it in the JK app, to 5–10 % for example.
+
+**Without the BMS's stage** (firmware before 19.10) FlatJack runs its own stages:
+
 1. **Charging (Bulk):** the battery takes your **Battery current** until its voltage reaches the topping-up voltage.
 2. **Topping up (Absorb), two stages.**
    - First stage: 15 mV a cell under «SOC 100 % at voltage» (3.445 V → 54.88 V for 16 cells). Why: a JK BMS sets its SOC to 100 % the moment the battery reaches that voltage, whatever the current, so charging straight to RCV would show 100 % with the battery still taking 30 A. The stage ends after a minute in which the battery takes 5 % of its capacity or less (5 A for 100 Ah: the "tail current").
@@ -141,11 +147,11 @@ All numbers come from the BMS: **RCV** (charge voltage per cell), **RCV time**, 
 
 **Current.** **Battery current** limits what goes into the battery; it is never more than 80 % of the BMS's charge overcurrent threshold, nor the Flatpack's 62.5 A. The Flatpack's limit is that plus what the house takes (worked out from the Flatpack's and the battery's currents), up to the same 80 % in total. OVP = the smaller of 58 V and cell OVP × cells.
 
-**Hold.** If a BMS is silent, the settings look wrong or differ between batteries, or every charge switch is off, the Flatpack holds RFV × cells: the battery isn't charged but the house stays fed. Protection (temperature, overvoltage) is the BMS's job: it opens its charge switch. A Hold or Waiting of up to 10 minutes (for example the JK app over Bluetooth briefly cutting the cable link, or a mains blip) continues topping up or Full where it stopped; longer starts again from Charging.
+**Hold.** If a BMS is silent, the settings look wrong or differ between batteries, or every charge switch is off, the Flatpack holds RFV × cells: the battery isn't charged but the house stays fed. Protection (temperature, overvoltage) is the BMS's job: it opens its charge switch. A Hold or Waiting of up to 10 minutes (for example the JK app over Bluetooth briefly cutting the cable link, or a mains blip) continues topping up or Full where it stopped; longer starts again from Charging. With the BMS leading, its stage comes back at once.
 
 **Why this voltage now (1.1.0).** The Charge tab's "Setpoint breakdown" row adds it up: the stage's target, the cell trim and the BMS-voltmeter correction, e.g. «54.88 V (first stage) − 0.37 correction = 54.51 V», and says when the battery is already above the target, so no current goes in. Under it, the **Decision log** lists what the charger changed and why since the controller started, newest first: each phase change with its cause, the second stage, the topping-up timer starting or pausing, the cell trim, a mains outage, and your changes of mode and limits, each with the setpoint, the battery's voltage, current and SOC at that moment. A restart starts it again.
 
-**After a restart** charging starts again from Charging (one extra topping up after each update).
+**After a restart** FlatJack's own stages start again from Charging (one extra topping up after each update); with the BMS leading, its stage simply carries on.
 
 ## Charge limit
 
@@ -294,7 +300,7 @@ FlatJack is its own firmware, not an ESPHome configuration, and Home Assistant n
 | No Flatpack | Swap `CAN_H` / `CAN_L`. A 120 Ω terminator at each end of the CAN cable (the board's switch, a resistor at the Flatpack). The Flatpack powered. |
 | Charging doesn't start in Auto | The Charge tab says why: BMS charge switch off, settings differ between batteries, a battery silent, settings outside the Flatpack's 43.2–58 V. |
 | "Full" while SOC shows 95 % | Normal: Full is the phase. Charging starts again at 90 % after the float time. |
-| SOC jumped to 100 % early | The BMS does that at «SOC 100 % at voltage»; FlatJack's two stages keep below it until the current falls. Check that setting is a bit under RCV. |
+| SOC jumped to 100 % early | The BMS does that at «SOC 100 % at voltage». With the BMS leading, switch on **Two-stage charge** on the Charge tab (1.3.0): FlatJack then keeps below that voltage until the current falls. Check that setting is a bit under RCV. |
 | The house lost power during a BMS restart | Expected without mains: the BMS switches discharge off for about 5 s. |
 | flatjack.local doesn't open | Use the address from the screen's settings tab or your router. |
 | A white frame round the screen | Board revision 1.1 fault: keep **Backlight off too** off. |
@@ -333,7 +339,7 @@ JSON over HTTP, no password; POST needs `Content-Type: application/json`. `b` is
 |---|---|---|
 | GET | `/api/state` | Everything as JSON (also pushed on WebSocket `/ws` every 500 ms) |
 | GET | `/api/history?from=<unix s>` | History, 16-byte samples |
-| POST | `/api/charger` | `{mode: off/keep/auto/manual, i_max, soc_max}` |
+| POST | `/api/charger` | `{mode: off/keep/auto/manual, i_max, soc_max, two_stage}` (`two_stage` 1.3.0) |
 | POST | `/api/psu/set` | `{v, i, ovp}`, manual mode only |
 | POST | `/api/psu/power` | `{p_max}` W, 0 = none, else 100–4000 |
 | POST | `/api/bms/switch` | `{b, name: charge/discharge/balance, on}` |
