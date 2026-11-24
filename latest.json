@@ -1,15 +1,15 @@
 {
- "version": "1.4.1",
+ "version": "1.4.2",
  "uk": [
-  "Без мережі Flatpack показував 6546.8 А і сотні кВт",
-  "Лічильники енергії перераховано з історії"
+  "Підказки у вікні Bluetooth на екрані більше не обрізаються",
+  "Посібник і знімки оновлено для екрана 1.4"
  ],
  "en": [
-  "Without the mains the Flatpack showed 6546.8 A and 348 kW",
-  "The energy counters are rebuilt from the history"
+  "The notes in the screen's Bluetooth window are no longer cut",
+  "The manual and its pictures now show the 1.4 screen"
  ],
  "ru": [
-  "Без сети Flatpack показывал 6546.8 А и сотни кВт",
-  "Счётчики энергии пересчитаны из истории"
+  "Подсказки в окне Bluetooth на экране больше не обрезаются",
+  "Руководство и снимки обновлены для экрана 1.4"
  ]
 }

@@ -12,14 +12,14 @@ FlatJack робить із випрямляча <b>Eltek Flatpack2</b> та <b>B
 </p>
 
 <p align="center">
-  <a href="#versions--версії"><img alt="Version 1.4.1" src="https://img.shields.io/badge/version-1.4.1-2ea44f?style=for-the-badge"></a>
+  <a href="#versions--версії"><img alt="Version 1.4.2" src="https://img.shields.io/badge/version-1.4.2-2ea44f?style=for-the-badge"></a>
   <img alt="Free firmware" src="https://img.shields.io/badge/firmware-free-3c8cdc?style=for-the-badge">
   <img alt="Home Assistant over MQTT" src="https://img.shields.io/badge/Home%20Assistant-MQTT-41bdf5?style=for-the-badge&logo=homeassistant&logoColor=white">
   <img alt="Ukrainian, English, Russian" src="https://img.shields.io/badge/UA%20%C2%B7%20EN%20%C2%B7%20RU-6b7a89?style=for-the-badge">
 </p>
 
 <p align="center">
-  <b><a href="#english">English</a></b> &nbsp;·&nbsp; <b><a href="#українська">Українська</a></b> &nbsp;·&nbsp; <b><a href="#versions--версії">⬇️ Download / Завантажити 1.4.1</a></b> &nbsp;·&nbsp; <b><a href="MANUAL.md">📖 Manual</a> / <a href="MANUAL.uk.md">Посібник</a></b> &nbsp;·&nbsp; <a href="LICENSE.md">Licence / Ліцензія</a>
+  <b><a href="#english">English</a></b> &nbsp;·&nbsp; <b><a href="#українська">Українська</a></b> &nbsp;·&nbsp; <b><a href="#versions--версії">⬇️ Download / Завантажити 1.4.2</a></b> &nbsp;·&nbsp; <b><a href="MANUAL.md">📖 Manual</a> / <a href="MANUAL.uk.md">Посібник</a></b> &nbsp;·&nbsp; <a href="LICENSE.md">Licence / Ліцензія</a>
 </p>
 
 ---
@@ -45,7 +45,7 @@ FlatJack робить із випрямляча <b>Eltek Flatpack2</b> та <b>B
 
 ### 📟 On the wall
 
-<p align="center"><img src="docs/img/readme/en/screen.gif" width="760" alt="The touch screen showing in turn: home, the battery, its cells, the day's history, charging, and a QR code that opens the web page on a phone"></p>
+<p align="center"><img src="docs/img/readme/en/screen.gif" width="760" alt="The touch screen showing in turn: home, the battery, its cells, its switches, the week's history, energy by day, charging, the charge stages, and a QR code that opens the web page on a phone"></p>
 
 Big numbers you can read at a glance: where the power comes from and where it goes, the charge level, the time to full or to empty, every cell, the day's charge history. Charging modes, the charge limit and the generator's power are a tap away; a QR code opens the web page on your phone.
 
@@ -120,7 +120,7 @@ Everything else, with screenshots (BMS settings, charging details, generator, se
 
 ### Put the firmware on the board (once)
 
-You need the file **`flatjack-v1.4.1-waveshare-s3-full.bin`** ([download](v1.4.1/flatjack-v1.4.1-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
+You need the file **`flatjack-v1.4.2-waveshare-s3-full.bin`** ([download](v1.4.2/flatjack-v1.4.2-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
 
 **The easy way, in a browser (Windows, macOS, Linux):**
 
@@ -139,7 +139,7 @@ You need the file **`flatjack-v1.4.1-waveshare-s3-full.bin`** ([download](v1.4.1
 **The command-line way** (any system with Python): `pip install esptool`, then
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.1-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.2-waveshare-s3-full.bin
 ```
 
 </details>
@@ -147,8 +147,8 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.1-waveshare-s3-full.bin
 ### First start
 
 1. The screen shows the FlatJack logo, then its home screen.
-2. **Wi-Fi:** the first time, the board opens its own Wi-Fi network `FlatJack-XXXXXX` for 3 minutes. Connect your phone to it: a page opens (if not, open http://192.168.4.1). Choose your home Wi-Fi, type its password and save. The board restarts and joins your network. Later you can change the network on the screen: **Settings → Wi-Fi → Change**.
-3. **The web page:** open **http://flatjack.local/**, or the address shown at the bottom of the screen's settings tab (the gear icon) (some Android phones and older Windows don't know `.local` names). **Settings → Wi-Fi → QR code** shows a code your phone camera can open.
+2. **Wi-Fi:** the first time, the board opens its own Wi-Fi network `FlatJack-XXXXXX` for 3 minutes. Connect your phone to it: a page opens (if not, open http://192.168.4.1). Choose your home Wi-Fi, type its password and save. The board restarts and joins your network. Later you can change the network on the screen: **Settings → Connection → Wi-Fi → Change**.
+3. **The web page:** open **http://flatjack.local/**, or the address shown at the bottom of the screen's settings tab (the gear icon) (some Android phones and older Windows don't know `.local` names). **Settings → Connection → Wi-Fi** shows a code your phone camera can open.
 4. **The battery and the Flatpack** are found by themselves: the battery within about a minute and a half, the Flatpack within seconds.
 5. **Charging:** on the screen's charging tab (the lightning icon on the left) choose **Auto**. The charge voltages come from the BMS settings (RCV, RFV and their times), so check those in the JK app first. **Charge to** sets a limit, **Battery current** the charging current.
 6. **Language:** the three flags at the bottom of the **Settings** tab, or on the web page's System tab.
@@ -222,7 +222,7 @@ FlatJack's firmware is free to download, install on your own devices and use. It
 
 ### 📟 На стіні
 
-<p align="center"><img src="docs/img/readme/uk/screen.gif" width="760" alt="Сенсорний екран показує по черзі: головну, батарею, її комірки, історію за день, заряджання й QR-код, що відкриває вебсторінку на телефоні"></p>
+<p align="center"><img src="docs/img/readme/uk/screen.gif" width="760" alt="Сенсорний екран показує по черзі: головну, батарею, її комірки, її вимикачі, історію за тиждень, енергію по днях, заряджання, етапи заряджання й QR-код, що відкриває вебсторінку на телефоні"></p>
 
 Великі цифри, які видно з першого погляду: звідки береться енергія й куди йде, рівень заряду, скільки до повного чи до порожнього, кожна комірка, історія заряду за день. Режими заряджання, межа заряду й потужність генератора за одне торкання; QR-код відкриває вебсторінку на телефоні.
 
@@ -297,7 +297,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 
 ### Прошивка плати (один раз)
 
-Потрібен файл **`flatjack-v1.4.1-waveshare-s3-full.bin`** ([завантажити](v1.4.1/flatjack-v1.4.1-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
+Потрібен файл **`flatjack-v1.4.2-waveshare-s3-full.bin`** ([завантажити](v1.4.2/flatjack-v1.4.2-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
 
 **Найпростіше, у браузері (Windows, macOS, Linux):**
 
@@ -316,7 +316,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 **Через командний рядок** (будь-яка система з Python): `pip install esptool`, далі
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.1-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.2-waveshare-s3-full.bin
 ```
 
 </details>
@@ -324,8 +324,8 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.1-waveshare-s3-full.bin
 ### Перший запуск
 
 1. На екрані з'являється логотип FlatJack, потім головний екран.
-2. **Wi-Fi:** уперше плата на 3 хвилини відкриває власну мережу Wi-Fi `FlatJack-XXXXXX`. Під'єднайте до неї телефон: відкриється сторінка (якщо ні, відкрийте http://192.168.4.1). Виберіть свою домашню мережу, введіть пароль і збережіть. Плата перезапуститься й під'єднається до вашої мережі. Пізніше мережу можна змінити на екрані: **Налаштування → Wi-Fi → Змінити**.
-3. **Вебсторінка:** відкрийте **http://flatjack.local/** або адресу внизу вкладки налаштувань на екрані (значок шестірні) (деякі телефони Android і старі Windows не знають імен `.local`). **Налаштування → Wi-Fi → QR-код** показує код, який відкриє камера телефона.
+2. **Wi-Fi:** уперше плата на 3 хвилини відкриває власну мережу Wi-Fi `FlatJack-XXXXXX`. Під'єднайте до неї телефон: відкриється сторінка (якщо ні, відкрийте http://192.168.4.1). Виберіть свою домашню мережу, введіть пароль і збережіть. Плата перезапуститься й під'єднається до вашої мережі. Пізніше мережу можна змінити на екрані: **Налаштування → Зв'язок → Wi-Fi → Змінити**.
+3. **Вебсторінка:** відкрийте **http://flatjack.local/** або адресу внизу вкладки налаштувань на екрані (значок шестірні) (деякі телефони Android і старі Windows не знають імен `.local`). **Налаштування → Зв'язок → Wi-Fi** показує код, який відкриє камера телефона.
 4. **Батарея й Flatpack** знаходяться самі: батарея приблизно за півтори хвилини, Flatpack за секунди.
 5. **Заряджання:** на вкладці заряджання на екрані (значок блискавки ліворуч) виберіть **Авто**. Напруги заряджання беруться з налаштувань BMS (RCV, RFV і їхні часи), тож спершу перевірте їх у застосунку JK. **Заряджати до** задає межу, **Струм у батарею** струм заряджання.
 6. **Мова:** три прапорці внизу вкладки **Налаштування** або вкладка «Система» на вебсторінці.
@@ -375,6 +375,21 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.1-waveshare-s3-full.bin
 ---
 
 ## Versions / Версії
+
+### 1.4.2
+
+- The notes in the screen's Bluetooth window are no longer cut
+- The manual and its pictures now show the 1.4 screen
+
+- Підказки у вікні Bluetooth на екрані більше не обрізаються
+- Посібник і знімки оновлено для екрана 1.4
+
+| | Update / Оновлення | First flash over USB / Перше прошивання через USB |
+|---|---|---|
+| Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.4.2-waveshare-s3.bin](v1.4.2/flatjack-v1.4.2-waveshare-s3.bin) | [flatjack-v1.4.2-waveshare-s3-full.bin](v1.4.2/flatjack-v1.4.2-waveshare-s3-full.bin) |
+| ESP32 DevKit | [flatjack-v1.4.2.bin](v1.4.2/flatjack-v1.4.2.bin) | [flatjack-v1.4.2-full.bin](v1.4.2/flatjack-v1.4.2-full.bin) |
+
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.4.2-relink.zip](v1.4.2/flatjack-v1.4.2-relink.zip) · [how to use / як користуватися](RELINK.md)
 
 ### 1.4.1
 

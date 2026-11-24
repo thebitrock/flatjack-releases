@@ -2,7 +2,7 @@
 
 **English** | [Українська](MANUAL.uk.md) · [Quick start](README.md)
 
-Everything FlatJack does, and the details that matter. Things marked **(1.0.0)** are new in version 1.0.0.
+Everything FlatJack does, and the details that matter. Things marked with a version, such as **(1.4.0)**, are new in that version.
 
 - [The screen](#the-screen)
 - [The web page](#the-web-page)
@@ -30,14 +30,14 @@ Everything FlatJack does, and the details that matter. Things marked **(1.0.0)**
 
 ## The screen
 
-Four tabs, chosen with the icons on the left: home, battery, charging, settings. The bar on top always says in one sentence what is going on; on the right is the clock.
+Five tabs, chosen with the icons on the left: home, battery, charging, history (1.4.0), settings. The bar on top always says in one sentence what is going on; on the right is the clock. **Tap the bar (1.4.0)** for every alarm and warning by name, as the web page lists them: each battery's alarms, protections with their countdown, a silent battery or Flatpack, the Flatpack's own alarms.
 
 <p>
 <img src="docs/img/manual/en/screen-home-a.png" alt="Home: charging" width="49%">
 <img src="docs/img/manual/en/screen-home-b.png" alt="Home: mains outage" width="49%">
 </p>
 
-**Home.** At the top, where the power comes from and where it goes: the Flatpack's card (mains voltage, the power it gives, its voltage and current), the house ("Load", and whether it is fed from the mains, the battery, the generator or both), and the lines between them: green while the mains charges or feeds, orange while the battery feeds. Below, the battery: charge %, capacity left, the power going in or out, and either the time to full charge, the time to the charge limit, or how long the battery lasts (see [How long the battery lasts](#how-long-the-battery-lasts)). The last line is the pack's voltage, current, temperature and cell spread.
+**Home.** At the top, where the power comes from and where it goes: the Flatpack's card (mains voltage, the power it gives, its voltage and current), the house ("Load", and whether it is fed from the mains, the battery, the generator or both), and the lines between them: green while the mains charges or feeds, orange while the battery feeds. Below, the battery: charge %, capacity left, the power going in or out, and either the time to full charge, the time to the charge limit, or how long the battery lasts (see [How long the battery lasts](#how-long-the-battery-lasts)). The last line is the pack's voltage, current, temperature and cell spread. **Tap the Flatpack's card (1.4.0)** for its details: status, mains, output, the setpoint with OVP, the power limit, inlet and outlet temperature and its alarms by name.
 
 **The top bar** turns orange for a warning and red for an alarm; with several alarms the first is named and "+N" counts the rest. Its words:
 - the charging phase in plain words: **Charging**, **Topping up**, **Full**, **SOC limit**, **Hold**, **Waiting**, **Manual mode**, **Charging off**, **Keeping charge**;
@@ -57,27 +57,34 @@ Four tabs, chosen with the icons on the left: home, battery, charging, settings.
 
 <img src="docs/img/manual/en/screen-home-f.png" alt="Home: no battery" width="49%">
 
-**Battery tab.** Three views: **General** (voltage, current, temperature, capacity, SOH, cycles), **Cells** (a 4×4 grid; the highest cell orange, the lowest blue; tap **Cells** again for cells 17–32), **History** (charge % over the last 24 hours; needs internet time). With 2 or more batteries a chip beside the views shows "1 of 2": tap it for the next battery. The footer says what the battery's switches do (charge off, discharge off, heating, balancing) and the MOSFET and Flatpack temperatures (orange above 65 °C).
+**Battery tab.** Three views: **General** (voltage, current, temperature, capacity, SOH, cycles), **Cells** (a 4×4 grid; the highest cell orange, the lowest blue; tap **Cells** again for cells 17–32), **Switches** (1.4.0: the BMS's charge, discharge and balancing switches; a tap asks first and says what follows, and **Yes** writes it to the BMS as the web page's switches do; over Bluetooth they are only shown). With 2 or more batteries a chip beside the views shows "1 of 2": tap it for the next battery. The footer says what the battery's switches do (charge off, discharge off, heating, balancing) and the MOSFET and Flatpack temperatures (orange above 65 °C).
 
 <p>
 <img src="docs/img/manual/en/screen-bat-a.png" alt="Battery: general" width="32%">
 <img src="docs/img/manual/en/screen-cells-a.png" alt="Battery: cells" width="32%">
-<img src="docs/img/manual/en/screen-hist-a.png" alt="Battery: history" width="32%">
+<img src="docs/img/manual/en/screen-sw-a.png" alt="Battery: switches" width="32%">
 </p>
 
-**Charging tab.** The mode on top (**Off / Keep / Auto / Manual**; a tap asks first and says what follows). In **Auto**: **Charge to** (the SOC limit, 100 % = charge fully) and **Battery current**. In **Manual**: the Flatpack's voltage and current, sent with **Apply**. **Apply** keeps the over-voltage limit at least 0.5 V above the voltage, as the web page's quick control does. The last row is the **Generator**: a switch and its power, 100–4000 W (see [Generator](#generator)). Holding + or − steps fast; the value is sent 0.7 s after the last step. The footer says the voltages ("Charging to 55.2 V, then 53.6 V") or why it pauses.
+**Charging tab.** The mode on top (**Off / Keep / Auto / Manual**; a tap asks first and says what follows). In **Auto**: **Charge to** (the SOC limit, 100 % = charge fully) and **Battery current**. In **Manual**: the Flatpack's voltage and current, sent with **Apply**. **Apply** keeps the over-voltage limit at least 0.5 V above the voltage, as the web page's quick control does. The last row is the **Generator**: a switch and its power, 100–4000 W (see [Generator](#generator)). Holding + or − steps fast; the value is sent 0.7 s after the last step. The footer says the voltages ("Charging to 55.2 V, then 53.6 V") or why it pauses. In **Auto**, **tap that line (1.4.0)** for the charge stages: FlatJack's phases with their voltages and times (the current one green), the BMS's stage and its time, the setpoint now, and the **Two-stage charge** switch (see [How automatic charging works](#how-automatic-charging-works)).
 
 <p>
 <img src="docs/img/manual/en/screen-charge-a.png" alt="Charging: auto" width="32%">
 <img src="docs/img/manual/en/screen-charge-h.png" alt="Charging: manual" width="32%">
-<img src="docs/img/manual/en/screen-dlg-mode.png" alt="Asking before a mode change" width="32%">
+<img src="docs/img/manual/en/screen-sh-stages-a.png" alt="Charge stages" width="32%">
 </p>
 
-**Settings tab.** **Flip the screen** (180°), **Turn the screen off** (never / 1 / 5 / 15 / 30 min; a touch wakes it and that touch does nothing else), **Backlight off too** (see the note below), **Wi-Fi**: **QR code** (opens the web page on a phone; while the setup network is open, joins it) and **Change** (forgets the network and opens the setup network). The footer: the address, the version, the update button, the three languages.
+**History tab (1.4.0).** **Day** and **Week**: charge %, battery power (into the battery green, out of it orange) and voltage on one time axis, each chart with its highest and lowest value; a gap where nothing was recorded. **Energy**: the Flatpack's kWh for the last seven days as bars, today first; tap a day for its numbers, in the web page's words (see [Energy](#energy-120)). The charts need internet time.
+
+<p>
+<img src="docs/img/manual/en/screen-hweek-a.png" alt="History: a week" width="49%">
+<img src="docs/img/manual/en/screen-energy-a.png" alt="History: energy by day" width="49%">
+</p>
+
+**Settings tab.** **Flip the screen** (180°), **Turn the screen off** (never / 1 / 5 / 15 / 30 min; a touch wakes it and that touch does nothing else), **Backlight off too** (see the note below), **Connection** (1.4.0): **Wi-Fi** shows a QR code that opens the web page on a phone (while the setup network is open, it joins that network), with **Change**, which forgets the network and opens the setup network; **Bluetooth** lists the paired BMSes with **Forget**, and **Find a BMS** looks for one to **Add** (see [Bluetooth](#bluetooth)). The footer: the address, the version, the update button, the three languages.
 
 <p>
 <img src="docs/img/manual/en/screen-set-a.png" alt="Settings" width="49%">
-<img src="docs/img/manual/en/screen-upd-new.png" alt="Update from the screen (an older example)" width="49%">
+<img src="docs/img/manual/en/screen-sh-ble-a.png" alt="Bluetooth from the screen" width="49%">
 </p>
 
 > [!NOTE]
@@ -225,7 +232,7 @@ At the end of the BMS tab. Over the cable only. Each asks for confirmation.
 
 ## Alarms
 
-The BMS's alarm bits are shown by name: on the screen the first in the top bar (red; not the BMS's reminder to change its password, a note on the web page), on the web page in the battery's alarm list, in Home Assistant as a text. Among them: cell over/under-voltage, charge/discharge overcurrent, short circuit, temperatures (charge, discharge, MOSFET, too cold), cell spread, wire resistance, cell count, current sensor, (1.0.0) temperature sensor fault, current limiter, short circuit not cleared, discharge overcurrent 2 / 3, too cold to discharge, GPS lock, and the BMS's user alarms (heater, charger link, relays, temperatures; web and Home Assistant only).
+The BMS's alarm bits are shown by name: on the screen the first in the top bar (red; not the BMS's reminder to change its password, a note on the web page) and all of them when you tap the bar (1.4.0), on the web page in the battery's alarm list, in Home Assistant as a text. Among them: cell over/under-voltage, charge/discharge overcurrent, short circuit, temperatures (charge, discharge, MOSFET, too cold), cell spread, wire resistance, cell count, current sensor, (1.0.0) temperature sensor fault, current limiter, short circuit not cleared, discharge overcurrent 2 / 3, too cold to discharge, GPS lock, and the BMS's user alarms (heater, charger link, relays, temperatures; on the screen only in the list the bar opens).
 
 ## How long the battery lasts
 
@@ -237,22 +244,22 @@ The BMS's alarm bits are shown by name: on the screen the first in the top bar (
 
 ## Energy (1.2.0)
 
-Under the history on the overview, **Energy** counts kWh: today, this month and in total, plus bars by day or by month.
+Under the history on the overview, **Energy** counts kWh: today, this month and in total, plus bars by day or by month. On the screen: **History → Energy** (1.4.0), the last seven days.
 - **Flatpack gave**: its DC output, V × I of every status frame (5 a second). Of it, **From the generator** while the power limit is on.
 - **From the mains ≈**: an estimate, output ÷ 0.95. The Flatpack reports no input current, so the mains side is not measured.
 - **Into the battery** / **From the battery**: V × I of the BMS, once a second.
 - **Load** = Flatpack − into the battery + from the battery (the inverter runs from the 48 V bus).
 
-The counters are saved every 10 minutes, so a power cut loses at most that. Finished days are kept for years. The first start of this version adds the history's last 30 days. If over a day the Flatpack's count differs from a meter you trust, set **Flatpack current correction**: new = current × real kWh ÷ shown (0.8–1.2). Home Assistant gets five energy sensors for its Energy dashboard.
+The counters are saved every 10 minutes, so a power cut loses at most that. Finished days are kept for years. The first start of this version adds the history's last 30 days. If over a day the Flatpack's count differs from a meter you trust, set **Flatpack current correction**: new = current × real kWh ÷ shown (0.8–1.2). Home Assistant gets five energy sensors for its Energy dashboard. (1.4.1) Before 1.4.1 a mains outage could add hundreds of kWh (the Flatpack's current was read wrongly), so 1.4.1 builds the counters and the days once more from the history (its 30 days; older days go): Home Assistant sees that as one meter reset.
 
 ## Charge history
 
-Every 2 minutes: voltage, battery current, Flatpack current, SOC, charger phase, temperatures (battery, MOSFET, Flatpack) and cell spread, kept for 30 days on the board (a power cut loses at most 2 minutes). The web chart shows 2 h, 6 h, 1, 3, 7 or 30 days with a crosshair (mouse, finger or arrow keys) and **Download CSV**. The coloured strip on top is the charger's phase. A break in a line: the controller was off or the BMS silent. The history needs internet time (NTP).
+Every 2 minutes: voltage, battery current, Flatpack current, SOC, charger phase, temperatures (battery, MOSFET, Flatpack) and cell spread, kept for 30 days on the board (a power cut loses at most 2 minutes). The web chart shows 2 h, 6 h, 1, 3, 7 or 30 days with a crosshair (mouse, finger or arrow keys) and **Download CSV**. The coloured strip on top is the charger's phase. A break in a line: the controller was off or the BMS silent. The history needs internet time (NTP). On the screen: **History → Day / Week** (1.4.0): charge %, battery power and voltage.
 
 ## Bluetooth
 
 The board can reach a JK-PB BMS over Bluetooth, through the BMS's own module (the one the JK phone app uses). Both boards have it; the ESP32 DevKit since 1.2.0, where a firmware upload over Wi-Fi switches Bluetooth off and the board restarts afterwards.
-- **Pairing:** **System → Bluetooth → Find a BMS nearby → Add.** Up to 3. Add a BMS while its cable answers: otherwise FlatJack can't tell which wired battery it is. Close the JK app first: a BMS takes one Bluetooth connection at a time.
+- **Pairing:** **System → Bluetooth → Find a BMS nearby → Add**, or on the screen **Settings → Connection → Bluetooth → Find a BMS → Add** (1.4.0). Up to 3. Add a BMS while its cable answers: otherwise FlatJack can't tell which wired battery it is. Close the JK app first: a BMS takes one Bluetooth connection at a time.
 - **A spare for the cable:** while the cable answers, Bluetooth stays off. If the cable is silent for 5 s, FlatJack connects over Bluetooth and keeps charging from it; once the cable has answered again for 30 s, Bluetooth is let go. *New: this switch-over has not been tested on a board yet.*
 - **A battery without a cable** works over Bluetooth alone (tested: read, charged to Full, reconnects by itself after restarts).
 - **Read only** over Bluetooth: switches and settings need the cable.
@@ -279,7 +286,7 @@ FlatJack is its own firmware, not an ESPHome configuration, and Home Assistant n
 
 ## Updates and restarts
 
-- **From the screen:** Settings → the download button beside the version: shows the new version's notes, **Update** installs it (about a minute, needs internet). Nothing installs by itself.
+- **From the screen:** Settings → the download button beside the version: shows the new version's notes, **Update** installs it (about a minute, needs internet). Nothing installs by itself. While the file is written the screen may flicker with stripes: that is normal and ends with the restart.
 - **From the web page:** System → Firmware update → the `…-waveshare-s3.bin` file (not `-full`).
 - Settings, Wi-Fi, the history and the paired Bluetooth devices are kept.
 - After a restart the Flatpack is logged in again at once, so it keeps its setting through an update; auto charging starts again from Charging.
@@ -318,15 +325,19 @@ Every state of the on-board screen, as the demo mode shows it (numbers are made 
 | <img src="docs/img/manual/en/screen-home-m.png" width="300"><br>Battery unplugged, still in Auto | <img src="docs/img/manual/en/screen-home-n.png" width="300"><br>On a generator | <img src="docs/img/manual/en/screen-home-o.png" width="300"><br>Discharge switched off |
 | <img src="docs/img/manual/en/screen-home-p.png" width="300"><br>Flatpack fan fault | <img src="docs/img/manual/en/screen-home-q.png" width="300"><br>Three alarms, balancing | <img src="docs/img/manual/en/screen-home-r.png" width="300"><br>Mains and battery both feed the house |
 | <img src="docs/img/manual/en/screen-home-s.png" width="300"><br>Mode Off | <img src="docs/img/manual/en/screen-home-t.png" width="300"><br>Mode Keep | <img src="docs/img/manual/en/screen-home-u.png" width="300"><br>Charge and discharge off |
-| <img src="docs/img/manual/en/screen-home-v.png" width="300"><br>Topping up, nothing flows | <img src="docs/img/manual/en/screen-home-w.png" width="300"><br>BMS over Bluetooth (icon top right) | <img src="docs/img/manual/en/screen-bat-a.png" width="300"><br>Battery: general |
-| <img src="docs/img/manual/en/screen-bat-i.png" width="300"><br>Two batteries: the «1 of 2» chip | <img src="docs/img/manual/en/screen-bat-j.png" width="300"><br>The widest numbers | <img src="docs/img/manual/en/screen-bat-o.png" width="300"><br>Discharge off |
-| <img src="docs/img/manual/en/screen-bat-q.png" width="300"><br>Alarms and balancing | <img src="docs/img/manual/en/screen-bat-u.png" width="300"><br>Charge and discharge off | <img src="docs/img/manual/en/screen-cells-a.png" width="300"><br>Cells |
-| <img src="docs/img/manual/en/screen-cells-i1.png" width="300"><br>32 cells: 17–32 | <img src="docs/img/manual/en/screen-cells-i2.png" width="300"><br>32 cells: 1–16 | <img src="docs/img/manual/en/screen-cells-q.png" width="300"><br>Cells with alarms |
-| <img src="docs/img/manual/en/screen-hist-a.png" width="300"><br>History: 24 h | <img src="docs/img/manual/en/screen-hist-i.png" width="300"><br>History, two batteries | <img src="docs/img/manual/en/screen-charge-a.png" width="300"><br>Auto |
-| <img src="docs/img/manual/en/screen-charge-e.png" width="300"><br>Hold: the reason in the footer | <img src="docs/img/manual/en/screen-charge-f.png" width="300"><br>Manual without a battery | <img src="docs/img/manual/en/screen-charge-h.png" width="300"><br>Manual |
-| <img src="docs/img/manual/en/screen-charge-j.png" width="300"><br>The widest numbers | <img src="docs/img/manual/en/screen-charge-l.png" width="300"><br>Battery unplugged, manual | <img src="docs/img/manual/en/screen-charge-m.png" width="300"><br>No battery: manual mode only |
-| <img src="docs/img/manual/en/screen-charge-n.png" width="300"><br>Generator on | <img src="docs/img/manual/en/screen-charge-s.png" width="300"><br>Off | <img src="docs/img/manual/en/screen-charge-t.png" width="300"><br>Keep |
-| <img src="docs/img/manual/en/screen-set-a.png" width="300"><br>Settings | <img src="docs/img/manual/en/screen-set-sleep.png" width="300"><br>Screen off after 30 min | <img src="docs/img/manual/en/screen-set-f.png" width="300"><br>While the setup network is open |
+| <img src="docs/img/manual/en/screen-home-v.png" width="300"><br>Topping up, nothing flows | <img src="docs/img/manual/en/screen-home-w.png" width="300"><br>BMS over Bluetooth (icon top right) | <img src="docs/img/manual/en/screen-home-x.png" width="300"><br>Several alarms; the Flatpack in alarm |
+| <img src="docs/img/manual/en/screen-bat-a.png" width="300"><br>Battery: general | <img src="docs/img/manual/en/screen-bat-i.png" width="300"><br>Two batteries: the «1 of 2» chip | <img src="docs/img/manual/en/screen-bat-j.png" width="300"><br>The widest numbers |
+| <img src="docs/img/manual/en/screen-bat-o.png" width="300"><br>Discharge off | <img src="docs/img/manual/en/screen-bat-q.png" width="300"><br>Alarms and balancing | <img src="docs/img/manual/en/screen-bat-u.png" width="300"><br>Charge and discharge off |
+| <img src="docs/img/manual/en/screen-cells-a.png" width="300"><br>Cells | <img src="docs/img/manual/en/screen-cells-i1.png" width="300"><br>32 cells: 17–32 | <img src="docs/img/manual/en/screen-cells-i2.png" width="300"><br>32 cells: 1–16 |
+| <img src="docs/img/manual/en/screen-cells-q.png" width="300"><br>Cells with alarms | <img src="docs/img/manual/en/screen-sw-a.png" width="300"><br>Battery: switches | <img src="docs/img/manual/en/screen-sw-u.png" width="300"><br>Switches: charge and discharge off |
+| <img src="docs/img/manual/en/screen-dlg-sw3.png" width="300"><br>Asking before discharge goes off | <img src="docs/img/manual/en/screen-hweek-a.png" width="300"><br>History: a week | <img src="docs/img/manual/en/screen-energy-a.png" width="300"><br>Energy by day |
+| <img src="docs/img/manual/en/screen-energy-n.png" width="300"><br>Energy with a generator | <img src="docs/img/manual/en/screen-charge-a.png" width="300"><br>Auto | <img src="docs/img/manual/en/screen-charge-e.png" width="300"><br>Hold: the reason in the footer |
+| <img src="docs/img/manual/en/screen-charge-f.png" width="300"><br>Manual without a battery | <img src="docs/img/manual/en/screen-charge-h.png" width="300"><br>Manual | <img src="docs/img/manual/en/screen-charge-j.png" width="300"><br>The widest numbers |
+| <img src="docs/img/manual/en/screen-charge-l.png" width="300"><br>Battery unplugged, manual | <img src="docs/img/manual/en/screen-charge-m.png" width="300"><br>No battery: manual mode only | <img src="docs/img/manual/en/screen-charge-n.png" width="300"><br>Generator on |
+| <img src="docs/img/manual/en/screen-charge-s.png" width="300"><br>Off | <img src="docs/img/manual/en/screen-charge-t.png" width="300"><br>Keep | <img src="docs/img/manual/en/screen-sh-stages-a.png" width="300"><br>Charge stages (tap the footer) |
+| <img src="docs/img/manual/en/screen-sh-stages-e.png" width="300"><br>Charge stages in a pause, with its reason | <img src="docs/img/manual/en/screen-sh-alarms-x.png" width="300"><br>All alarms (tap the top bar) | <img src="docs/img/manual/en/screen-sh-psu-a.png" width="300"><br>Flatpack (tap its card) |
+| <img src="docs/img/manual/en/screen-sh-psu-b.png" width="300"><br>Flatpack silent | <img src="docs/img/manual/en/screen-set-a.png" width="300"><br>Settings | <img src="docs/img/manual/en/screen-set-sleep.png" width="300"><br>Screen off after 30 min |
+| <img src="docs/img/manual/en/screen-set-f.png" width="300"><br>While the setup network is open | <img src="docs/img/manual/en/screen-sh-ble-a.png" width="300"><br>Bluetooth: one paired, two found | <img src="docs/img/manual/en/screen-sh-ble-x.png" width="300"><br>Bluetooth: connecting, not answering, on standby |
 | <img src="docs/img/manual/en/screen-dlg-mode.png" width="300"><br>Asking before a mode change | <img src="docs/img/manual/en/screen-dlg-qr.png" width="300"><br>QR code for the phone | <img src="docs/img/manual/en/screen-dlg-wifi.png" width="300"><br>Change Wi-Fi? |
 | <img src="docs/img/manual/en/screen-upd-checking.png" width="300"><br>Update: looking | <img src="docs/img/manual/en/screen-upd-current.png" width="300"><br>Update: newest already | <img src="docs/img/manual/en/screen-upd-new.png" width="300"><br>Update: a new version |
 | <img src="docs/img/manual/en/screen-upd-loading.png" width="300"><br>Update: writing | <img src="docs/img/manual/en/screen-upd-done.png" width="300"><br>Update: done, restarting | <img src="docs/img/manual/en/screen-upd-failed.png" width="300"><br>Update: failed |
