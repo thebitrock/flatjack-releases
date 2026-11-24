@@ -1,18 +1,18 @@
 {
- "version": "1.3.0",
+ "version": "1.4.0",
  "uk": [
-  "Заряд веде власна стадія BMS JK, як в інвертора",
-  "Новий перемикач на вебсторінці: два етапи заряджання",
-  "ESP32 DevKit: менше перезапусків з відкритою вебсторінкою"
+  "Екран: вкладка Історія, енергія в кВт·год, вимикачі BMS",
+  "Екран: аварії, Flatpack і стадії заряду торканням",
+  "Екран: пошук і додавання BMS через Bluetooth"
  ],
  "en": [
-  "Charging follows the JK BMS's own stage, as an inverter does",
-  "New switch on the web page: two-stage charge",
-  "ESP32 DevKit: fewer restarts with the web page open"
+  "Screen: a history tab, energy in kWh, the BMS switches",
+  "Screen: alarms, Flatpack and charge stages at a tap",
+  "Screen: find and add a BMS over Bluetooth"
  ],
  "ru": [
-  "Заряд ведёт собственная стадия BMS JK, как у инвертора",
-  "Новый переключатель на веб-странице: два этапа заряда",
-  "ESP32 DevKit: меньше перезапусков с открытой веб-страницей"
+  "Экран: вкладка История, энергия в кВт·ч, выключатели BMS",
+  "Экран: аварии, Flatpack и стадии заряда касанием",
+  "Экран: поиск и добавление BMS через Bluetooth"
  ]
 }

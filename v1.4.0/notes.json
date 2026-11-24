@@ -1,0 +1,18 @@
+{
+ "version": "1.4.0",
+ "uk": [
+  "Екран: вкладка Історія, енергія в кВт·год, вимикачі BMS",
+  "Екран: аварії, Flatpack і стадії заряду торканням",
+  "Екран: пошук і додавання BMS через Bluetooth"
+ ],
+ "en": [
+  "Screen: a history tab, energy in kWh, the BMS switches",
+  "Screen: alarms, Flatpack and charge stages at a tap",
+  "Screen: find and add a BMS over Bluetooth"
+ ],
+ "ru": [
+  "Экран: вкладка История, энергия в кВт·ч, выключатели BMS",
+  "Экран: аварии, Flatpack и стадии заряда касанием",
+  "Экран: поиск и добавление BMS через Bluetooth"
+ ]
+}

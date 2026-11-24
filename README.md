@@ -12,14 +12,14 @@ FlatJack робить із випрямляча <b>Eltek Flatpack2</b> та <b>B
 </p>
 
 <p align="center">
-  <a href="#versions--версії"><img alt="Version 1.3.0" src="https://img.shields.io/badge/version-1.3.0-2ea44f?style=for-the-badge"></a>
+  <a href="#versions--версії"><img alt="Version 1.4.0" src="https://img.shields.io/badge/version-1.4.0-2ea44f?style=for-the-badge"></a>
   <img alt="Free firmware" src="https://img.shields.io/badge/firmware-free-3c8cdc?style=for-the-badge">
   <img alt="Home Assistant over MQTT" src="https://img.shields.io/badge/Home%20Assistant-MQTT-41bdf5?style=for-the-badge&logo=homeassistant&logoColor=white">
   <img alt="Ukrainian, English, Russian" src="https://img.shields.io/badge/UA%20%C2%B7%20EN%20%C2%B7%20RU-6b7a89?style=for-the-badge">
 </p>
 
 <p align="center">
-  <b><a href="#english">English</a></b> &nbsp;·&nbsp; <b><a href="#українська">Українська</a></b> &nbsp;·&nbsp; <b><a href="#versions--версії">⬇️ Download / Завантажити 1.3.0</a></b> &nbsp;·&nbsp; <b><a href="MANUAL.md">📖 Manual</a> / <a href="MANUAL.uk.md">Посібник</a></b> &nbsp;·&nbsp; <a href="LICENSE.md">Licence / Ліцензія</a>
+  <b><a href="#english">English</a></b> &nbsp;·&nbsp; <b><a href="#українська">Українська</a></b> &nbsp;·&nbsp; <b><a href="#versions--версії">⬇️ Download / Завантажити 1.4.0</a></b> &nbsp;·&nbsp; <b><a href="MANUAL.md">📖 Manual</a> / <a href="MANUAL.uk.md">Посібник</a></b> &nbsp;·&nbsp; <a href="LICENSE.md">Licence / Ліцензія</a>
 </p>
 
 ---
@@ -120,7 +120,7 @@ Everything else, with screenshots (BMS settings, charging details, generator, se
 
 ### Put the firmware on the board (once)
 
-You need the file **`flatjack-v1.3.0-waveshare-s3-full.bin`** ([download](v1.3.0/flatjack-v1.3.0-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
+You need the file **`flatjack-v1.4.0-waveshare-s3-full.bin`** ([download](v1.4.0/flatjack-v1.4.0-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
 
 **The easy way, in a browser (Windows, macOS, Linux):**
 
@@ -139,7 +139,7 @@ You need the file **`flatjack-v1.3.0-waveshare-s3-full.bin`** ([download](v1.3.0
 **The command-line way** (any system with Python): `pip install esptool`, then
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.0-waveshare-s3-full.bin
 ```
 
 </details>
@@ -297,7 +297,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 
 ### Прошивка плати (один раз)
 
-Потрібен файл **`flatjack-v1.3.0-waveshare-s3-full.bin`** ([завантажити](v1.3.0/flatjack-v1.3.0-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
+Потрібен файл **`flatjack-v1.4.0-waveshare-s3-full.bin`** ([завантажити](v1.4.0/flatjack-v1.4.0-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
 
 **Найпростіше, у браузері (Windows, macOS, Linux):**
 
@@ -316,7 +316,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 **Через командний рядок** (будь-яка система з Python): `pip install esptool`, далі
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.0-waveshare-s3-full.bin
 ```
 
 </details>
@@ -376,6 +376,23 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
 
 ## Versions / Версії
 
+### 1.4.0
+
+- Screen: a history tab, energy in kWh, the BMS switches
+- Screen: alarms, Flatpack and charge stages at a tap
+- Screen: find and add a BMS over Bluetooth
+
+- Екран: вкладка Історія, енергія в кВт·год, вимикачі BMS
+- Екран: аварії, Flatpack і стадії заряду торканням
+- Екран: пошук і додавання BMS через Bluetooth
+
+| | Update / Оновлення | First flash over USB / Перше прошивання через USB |
+|---|---|---|
+| Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.4.0-waveshare-s3.bin](v1.4.0/flatjack-v1.4.0-waveshare-s3.bin) | [flatjack-v1.4.0-waveshare-s3-full.bin](v1.4.0/flatjack-v1.4.0-waveshare-s3-full.bin) |
+| ESP32 DevKit | [flatjack-v1.4.0.bin](v1.4.0/flatjack-v1.4.0.bin) | [flatjack-v1.4.0-full.bin](v1.4.0/flatjack-v1.4.0-full.bin) |
+
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.4.0-relink.zip](v1.4.0/flatjack-v1.4.0-relink.zip) · [how to use / як користуватися](RELINK.md)
+
 ### 1.3.0
 
 - Charging follows the JK BMS's own stage, as an inverter does
@@ -390,6 +407,8 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
 |---|---|---|
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.3.0-waveshare-s3.bin](v1.3.0/flatjack-v1.3.0-waveshare-s3.bin) | [flatjack-v1.3.0-waveshare-s3-full.bin](v1.3.0/flatjack-v1.3.0-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.3.0.bin](v1.3.0/flatjack-v1.3.0.bin) | [flatjack-v1.3.0-full.bin](v1.3.0/flatjack-v1.3.0-full.bin) |
+
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.3.0-relink.zip](v1.3.0/flatjack-v1.3.0-relink.zip) · [how to use / як користуватися](RELINK.md)
 
 ### 1.2.1
 
@@ -406,6 +425,8 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.2.1-waveshare-s3.bin](v1.2.1/flatjack-v1.2.1-waveshare-s3.bin) | [flatjack-v1.2.1-waveshare-s3-full.bin](v1.2.1/flatjack-v1.2.1-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.2.1.bin](v1.2.1/flatjack-v1.2.1.bin) | [flatjack-v1.2.1-full.bin](v1.2.1/flatjack-v1.2.1-full.bin) |
 
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.2.1-relink.zip](v1.2.1/flatjack-v1.2.1-relink.zip) · [how to use / як користуватися](RELINK.md)
+
 ### 1.2.0
 
 - Energy: kWh through the Flatpack and the battery, by day
@@ -419,6 +440,8 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.2.0-waveshare-s3.bin](v1.2.0/flatjack-v1.2.0-waveshare-s3.bin) | [flatjack-v1.2.0-waveshare-s3-full.bin](v1.2.0/flatjack-v1.2.0-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.2.0.bin](v1.2.0/flatjack-v1.2.0.bin) | [flatjack-v1.2.0-full.bin](v1.2.0/flatjack-v1.2.0-full.bin) |
 
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.2.0-relink.zip](v1.2.0/flatjack-v1.2.0-relink.zip) · [how to use / як користуватися](RELINK.md)
+
 ### 1.1.0
 
 - Charger decision log: what changed and why
@@ -431,6 +454,8 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
 |---|---|---|
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.1.0-waveshare-s3.bin](v1.1.0/flatjack-v1.1.0-waveshare-s3.bin) | [flatjack-v1.1.0-waveshare-s3-full.bin](v1.1.0/flatjack-v1.1.0-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.1.0.bin](v1.1.0/flatjack-v1.1.0.bin) | [flatjack-v1.1.0-full.bin](v1.1.0/flatjack-v1.1.0-full.bin) |
+
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.1.0-relink.zip](v1.1.0/flatjack-v1.1.0-relink.zip) · [how to use / як користуватися](RELINK.md)
 
 ### 1.0.0
 
@@ -446,3 +471,5 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.3.0-waveshare-s3-full.bin
 |---|---|---|
 | Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.0.0-waveshare-s3.bin](v1.0.0/flatjack-v1.0.0-waveshare-s3.bin) | [flatjack-v1.0.0-waveshare-s3-full.bin](v1.0.0/flatjack-v1.0.0-waveshare-s3-full.bin) |
 | ESP32 DevKit | [flatjack-v1.0.0.bin](v1.0.0/flatjack-v1.0.0.bin) | [flatjack-v1.0.0-full.bin](v1.0.0/flatjack-v1.0.0-full.bin) |
+
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.0.0-relink.zip](v1.0.0/flatjack-v1.0.0-relink.zip) · [how to use / як користуватися](RELINK.md)
