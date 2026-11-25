@@ -80,7 +80,7 @@ Five tabs, chosen with the icons on the left: home, battery, charging, history (
 <img src="docs/img/manual/en/screen-energy-a.png" alt="History: energy by day" width="49%">
 </p>
 
-**Settings tab.** **Flip the screen** (180°), **Turn the screen off** (never / 1 / 5 / 15 / 30 min; a touch wakes it and that touch does nothing else), **Backlight off too** (see the note below), **Connection** (1.4.0): **Wi-Fi** shows a QR code that opens the web page on a phone (while the setup network is open, it joins that network), with **Change**, which forgets the network and opens the setup network; **Bluetooth** lists the paired BMSes with **Forget**, and **Find a BMS** looks for one to **Add** (see [Bluetooth](#bluetooth)). The footer: the address, the version, the update button, the three languages.
+**Settings tab.** **Screen** (1.4.3): the theme, **Dark**, **Light** (a bright room), **Night** (dim amber, no blue, for a dark room) or **Contrast** (black and white, for reading from afar), a tap gives the next; **180°** turns the picture over. **Turn the screen off** (never / 1 / 5 / 15 / 30 min; a touch wakes it and that touch does nothing else), **Brightness** (1.4.3, 0–100 %, see the note below), **Connection** (1.4.0): **Wi-Fi** shows a QR code that opens the web page on a phone (while the setup network is open, it joins that network), with **Change**, which forgets the network and opens the setup network; **Bluetooth** lists the paired BMSes with **Forget**, and **Find a BMS** looks for one to **Add** (see [Bluetooth](#bluetooth)). The footer: the address, the version, the update button, the three languages.
 
 <p>
 <img src="docs/img/manual/en/screen-set-a.png" alt="Settings" width="49%">
@@ -88,7 +88,7 @@ Five tabs, chosen with the icons on the left: home, battery, charging, history (
 </p>
 
 > [!NOTE]
-> Waveshare's board revision 1.1 has a known fault: a few minutes with the backlight off leave a white glowing frame round the screen, which fades only slowly. Waveshare confirmed it; there is no software fix. That is why **Backlight off too** is off by default: the screen then turns black but the backlight stays on.
+> The board can only switch its backlight on or off, so **Brightness** darkens the picture itself: the screen gives less light, but the backlight stays on. At 0 % a little light is left, so the slider can always be found. The backlight is never switched off: on Waveshare's board revision 1.1 a few minutes without it leave a white glowing frame round the screen that fades only slowly (a known fault Waveshare confirmed). Until 1.4.3 a **Backlight off too** switch did that while the screen was off.
 
 **If the battery goes silent in Auto** for 10 s, a dialog offers manual mode, once per outage. It closes by itself when the battery answers again, and charging carries on as before.
 
@@ -310,7 +310,7 @@ FlatJack is its own firmware, not an ESPHome configuration, and Home Assistant n
 | SOC jumped to 100 % early | The BMS does that at «SOC 100 % at voltage». With the BMS leading, switch on **Two-stage charge** on the Charge tab (1.3.0): FlatJack then keeps below that voltage until the current falls. Check that setting is a bit under RCV. |
 | The house lost power during a BMS restart | Expected without mains: the BMS switches discharge off for about 5 s. |
 | flatjack.local doesn't open | Use the address from the screen's settings tab or your router. |
-| A white frame round the screen | Board revision 1.1 fault: keep **Backlight off too** off. |
+| A white frame round the screen | Board revision 1.1 fault after the backlight was off (before 1.4.3 with **Backlight off too** on); it fades slowly with the backlight on. |
 
 ## All screens
 
@@ -338,6 +338,7 @@ Every state of the on-board screen, as the demo mode shows it (numbers are made 
 | <img src="docs/img/manual/en/screen-sh-stages-e.png" width="300"><br>Charge stages in a pause, with its reason | <img src="docs/img/manual/en/screen-sh-alarms-x.png" width="300"><br>All alarms (tap the top bar) | <img src="docs/img/manual/en/screen-sh-psu-a.png" width="300"><br>Flatpack (tap its card) |
 | <img src="docs/img/manual/en/screen-sh-psu-b.png" width="300"><br>Flatpack silent | <img src="docs/img/manual/en/screen-set-a.png" width="300"><br>Settings | <img src="docs/img/manual/en/screen-set-sleep.png" width="300"><br>Screen off after 30 min |
 | <img src="docs/img/manual/en/screen-set-f.png" width="300"><br>While the setup network is open | <img src="docs/img/manual/en/screen-sh-ble-a.png" width="300"><br>Bluetooth: one paired, two found | <img src="docs/img/manual/en/screen-sh-ble-x.png" width="300"><br>Bluetooth: connecting, not answering, on standby |
+| <img src="docs/img/manual/en/screen-home-light.png" width="300"><br>Light theme | <img src="docs/img/manual/en/screen-home-night.png" width="300"><br>Night theme | |
 | <img src="docs/img/manual/en/screen-dlg-mode.png" width="300"><br>Asking before a mode change | <img src="docs/img/manual/en/screen-dlg-qr.png" width="300"><br>QR code for the phone | <img src="docs/img/manual/en/screen-dlg-wifi.png" width="300"><br>Change Wi-Fi? |
 | <img src="docs/img/manual/en/screen-upd-checking.png" width="300"><br>Update: looking | <img src="docs/img/manual/en/screen-upd-current.png" width="300"><br>Update: newest already | <img src="docs/img/manual/en/screen-upd-new.png" width="300"><br>Update: a new version |
 | <img src="docs/img/manual/en/screen-upd-loading.png" width="300"><br>Update: writing | <img src="docs/img/manual/en/screen-upd-done.png" width="300"><br>Update: done, restarting | <img src="docs/img/manual/en/screen-upd-failed.png" width="300"><br>Update: failed |

@@ -12,14 +12,14 @@ FlatJack робить із випрямляча <b>Eltek Flatpack2</b> та <b>B
 </p>
 
 <p align="center">
-  <a href="#versions--версії"><img alt="Version 1.4.2" src="https://img.shields.io/badge/version-1.4.2-2ea44f?style=for-the-badge"></a>
+  <a href="#versions--версії"><img alt="Version 1.4.3" src="https://img.shields.io/badge/version-1.4.3-2ea44f?style=for-the-badge"></a>
   <img alt="Free firmware" src="https://img.shields.io/badge/firmware-free-3c8cdc?style=for-the-badge">
   <img alt="Home Assistant over MQTT" src="https://img.shields.io/badge/Home%20Assistant-MQTT-41bdf5?style=for-the-badge&logo=homeassistant&logoColor=white">
   <img alt="Ukrainian, English, Russian" src="https://img.shields.io/badge/UA%20%C2%B7%20EN%20%C2%B7%20RU-6b7a89?style=for-the-badge">
 </p>
 
 <p align="center">
-  <b><a href="#english">English</a></b> &nbsp;·&nbsp; <b><a href="#українська">Українська</a></b> &nbsp;·&nbsp; <b><a href="#versions--версії">⬇️ Download / Завантажити 1.4.2</a></b> &nbsp;·&nbsp; <b><a href="MANUAL.md">📖 Manual</a> / <a href="MANUAL.uk.md">Посібник</a></b> &nbsp;·&nbsp; <a href="LICENSE.md">Licence / Ліцензія</a>
+  <b><a href="#english">English</a></b> &nbsp;·&nbsp; <b><a href="#українська">Українська</a></b> &nbsp;·&nbsp; <b><a href="#versions--версії">⬇️ Download / Завантажити 1.4.3</a></b> &nbsp;·&nbsp; <b><a href="MANUAL.md">📖 Manual</a> / <a href="MANUAL.uk.md">Посібник</a></b> &nbsp;·&nbsp; <a href="LICENSE.md">Licence / Ліцензія</a>
 </p>
 
 ---
@@ -120,7 +120,7 @@ Everything else, with screenshots (BMS settings, charging details, generator, se
 
 ### Put the firmware on the board (once)
 
-You need the file **`flatjack-v1.4.2-waveshare-s3-full.bin`** ([download](v1.4.2/flatjack-v1.4.2-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
+You need the file **`flatjack-v1.4.3-waveshare-s3-full.bin`** ([download](v1.4.3/flatjack-v1.4.3-waveshare-s3-full.bin)) and a computer with Windows, macOS or Linux.
 
 **The easy way, in a browser (Windows, macOS, Linux):**
 
@@ -139,7 +139,7 @@ You need the file **`flatjack-v1.4.2-waveshare-s3-full.bin`** ([download](v1.4.2
 **The command-line way** (any system with Python): `pip install esptool`, then
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.2-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.3-waveshare-s3-full.bin
 ```
 
 </details>
@@ -174,7 +174,7 @@ Settings, Wi-Fi and the history are kept. The board restarts after an update, an
 | No Flatpack | Swap `CAN_H` and `CAN_L`. Check both 120 Ω terminators and that the Flatpack has mains or battery power. |
 | http://flatjack.local/ doesn't open | Use the address from the bottom of the screen's **Settings** tab. |
 | The phone app can't connect to the BMS | FlatJack is connected to it over Bluetooth. Remove the device on the web page, or leave it: with a working cable FlatJack lets Bluetooth go. |
-| A white glowing frame around the screen | A known fault of Waveshare's board revision 1.1 when the backlight is switched off. Keep **Backlight off too** switched off in Settings. |
+| A white glowing frame around the screen | A known fault of Waveshare's board revision 1.1 after the backlight was switched off (before 1.4.3, the **Backlight off too** setting). From 1.4.3 the backlight stays on; the frame fades slowly. |
 
 > [!NOTE]
 > The web page and its settings have no password. Keep the board on your home network; don't open it to the internet.
@@ -297,7 +297,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 
 ### Прошивка плати (один раз)
 
-Потрібен файл **`flatjack-v1.4.2-waveshare-s3-full.bin`** ([завантажити](v1.4.2/flatjack-v1.4.2-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
+Потрібен файл **`flatjack-v1.4.3-waveshare-s3-full.bin`** ([завантажити](v1.4.3/flatjack-v1.4.3-waveshare-s3-full.bin)) і комп'ютер з Windows, macOS або Linux.
 
 **Найпростіше, у браузері (Windows, macOS, Linux):**
 
@@ -316,7 +316,7 @@ Flatpack, батарея (через свою BMS) та інвертор сид�
 **Через командний рядок** (будь-яка система з Python): `pip install esptool`, далі
 
 ```sh
-esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.2-waveshare-s3-full.bin
+esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.3-waveshare-s3-full.bin
 ```
 
 </details>
@@ -351,7 +351,7 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.2-waveshare-s3-full.bin
 | Немає Flatpack | Поміняйте місцями `CAN_H` і `CAN_L`. Перевірте обидва термінатори 120 Ом і що Flatpack має живлення від мережі чи батареї. |
 | http://flatjack.local/ не відкривається | Відкрийте адресу знизу вкладки **Налаштування** на екрані. |
 | Застосунок JK не під'єднується до BMS | До неї під'єднаний FlatJack через Bluetooth. Видаліть пристрій на вебсторінці або лишіть як є: коли кабель працює, FlatJack відпускає Bluetooth. |
-| Біла світла рамка по краях екрана | Відома вада плати Waveshare ревізії 1.1, коли вимикається підсвітка. Не вмикайте в налаштуваннях **Вимикати й підсвітку**. |
+| Біла світла рамка по краях екрана | Відома вада плати Waveshare ревізії 1.1 після вимкнення підсвітки (до 1.4.3, налаштування **Вимикати й підсвітку**). З 1.4.3 підсвітка не вимикається; рамка поволі сходить. |
 
 > [!NOTE]
 > Вебсторінка та її налаштування без пароля. Тримайте плату в домашній мережі, не відкривайте її в інтернет.
@@ -375,6 +375,21 @@ esptool.py --chip esp32s3 write_flash 0x0 flatjack-v1.4.2-waveshare-s3-full.bin
 ---
 
 ## Versions / Версії
+
+### 1.4.3
+
+- Screen themes: dark, light, night, contrast
+- A brightness slider instead of the backlight switch
+
+- Теми екрана: темна, світла, нічна, контрастна
+- Повзунок яскравості замість вимикача підсвітки
+
+| | Update / Оновлення | First flash over USB / Перше прошивання через USB |
+|---|---|---|
+| Waveshare ESP32-S3-Touch-LCD-5B | [flatjack-v1.4.3-waveshare-s3.bin](v1.4.3/flatjack-v1.4.3-waveshare-s3.bin) | [flatjack-v1.4.3-waveshare-s3-full.bin](v1.4.3/flatjack-v1.4.3-waveshare-s3-full.bin) |
+| ESP32 DevKit | [flatjack-v1.4.3.bin](v1.4.3/flatjack-v1.4.3.bin) | [flatjack-v1.4.3-full.bin](v1.4.3/flatjack-v1.4.3-full.bin) |
+
+LGPL relinking kit / Набір для перезбирання (LGPL): [flatjack-v1.4.3-relink.zip](v1.4.3/flatjack-v1.4.3-relink.zip) · [how to use / як користуватися](RELINK.md)
 
 ### 1.4.2
 

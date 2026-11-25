@@ -1,15 +1,15 @@
 {
- "version": "1.4.2",
+ "version": "1.4.3",
  "uk": [
-  "Підказки у вікні Bluetooth на екрані більше не обрізаються",
-  "Посібник і знімки оновлено для екрана 1.4"
+  "Теми екрана: темна, світла, нічна, контрастна",
+  "Повзунок яскравості замість вимикача підсвітки"
  ],
  "en": [
-  "The notes in the screen's Bluetooth window are no longer cut",
-  "The manual and its pictures now show the 1.4 screen"
+  "Screen themes: dark, light, night, contrast",
+  "A brightness slider instead of the backlight switch"
  ],
  "ru": [
-  "Подсказки в окне Bluetooth на экране больше не обрезаются",
-  "Руководство и снимки обновлены для экрана 1.4"
+  "Темы экрана: тёмная, светлая, ночная, контрастная",
+  "Ползунок яркости вместо выключателя подсветки"
  ]
 }
