@@ -1,12 +1,18 @@
 {
- "version": "1.4.4",
+ "version": "1.4.5",
  "uk": [
-  "Повзунок яскравості більше не гальмує екран"
+  "Тема екрана змінюється за пів секунди",
+  "Плата 4.3B: інтерфейс на екрані 800x480",
+  "Пошук Bluetooth показує лише JK BMS"
  ],
  "en": [
-  "The brightness slider no longer stalls the screen"
+  "The screen theme changes in half a second",
+  "4.3B board: the interface on its 800x480 screen",
+  "Bluetooth search lists JK BMSes only"
  ],
  "ru": [
-  "Ползунок яркости больше не тормозит экран"
+  "Тема экрана меняется за полсекунды",
+  "Плата 4.3B: интерфейс на экране 800x480",
+  "Поиск Bluetooth показывает только JK BMS"
  ]
 }
